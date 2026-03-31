@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "mcp__plugin_figma_figma__get_design_context",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/251633d5-047f-478d-ac35-7492082b835f\" -o /root/csie/assets/img/logo.png)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/d4b4c392-f0d6-40b7-a736-f234a3c41e3b\" -o /root/csie/assets/img/search.svg)"
+    ]
+  }
+}
