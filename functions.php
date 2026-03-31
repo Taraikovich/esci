@@ -124,9 +124,6 @@ add_action('widgets_init', 'csie_widgets_init');
  * Add Tailwind classes to nav menu links.
  */
 function csie_nav_menu_link_attributes($atts, $item, $args) {
-    if ($args->theme_location === 'primary') {
-        $atts['class'] = 'text-[#353535] hover:text-[#004f86] transition-colors text-base leading-[1.2]';
-    }
     if ($args->theme_location === 'secondary') {
         $atts['class'] = 'text-white hover:text-white/80 transition-colors text-base leading-[1.2]';
     }

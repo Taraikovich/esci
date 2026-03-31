@@ -1,1 +1,174 @@
 @import "tailwindcss";
+
+nav li {
+  list-style: none;
+}
+
+/* ===== Desktop primary menu dropdown ===== */
+
+/* Top-level items: relative for dropdown positioning */
+.csie-menu > .menu-item {
+  position: relative;
+}
+
+/* Top-level link */
+.csie-menu > .menu-item > a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #353535;
+  font-size: 16px;
+  line-height: 1.2;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.csie-menu > .menu-item > a:hover {
+  color: #004f86;
+}
+
+/* No chevron on top-level items */
+
+/* Dropdown panel (level 1 sub-menu) */
+.csie-menu > .menu-item > .sub-menu {
+  position: absolute;
+  top: 100%;
+  left: -15px;
+  min-width: 230px;
+  padding: 20px 15px;
+  background: #f8f8f8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  flex-direction: column;
+  gap: 15px;
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+  display: flex;
+}
+
+/* Invisible bridge to prevent gap hover loss */
+.csie-menu > .menu-item-has-children::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  display: none;
+}
+.csie-menu > .menu-item-has-children:hover::after {
+  display: block;
+}
+
+/* Show on hover */
+.csie-menu > .menu-item:hover > .sub-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Level 2 items inside dropdown */
+.csie-menu .sub-menu > .menu-item > a {
+  display: block;
+  color: #353535;
+  font-size: 16px;
+  line-height: 1.2;
+  transition: color 0.2s;
+}
+.csie-menu .sub-menu > .menu-item > a:hover {
+  color: #004f86;
+}
+
+/* Level 2 item header row (link + arrow toggle) */
+.csie-menu .sub-menu > .menu-item-has-children {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0;
+}
+.csie-menu .sub-menu > .menu-item-has-children > a {
+  flex: none;
+}
+
+/* Arrow toggle button for nested items */
+.csie-submenu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 1.2em;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #353535;
+  flex: none;
+  transition: transform 0.2s;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+.csie-submenu-toggle svg {
+  width: 11px;
+  height: 6px;
+}
+.csie-submenu-toggle.is-open {
+  transform: rotate(180deg);
+}
+
+/* Level 3 sub-menu (children of dropdown items) */
+.csie-menu .sub-menu .sub-menu {
+  display: none;
+  flex-direction: column;
+  gap: 9px;
+  width: 100%;
+  padding-top: 9px;
+}
+.csie-menu .sub-menu .sub-menu.is-open {
+  display: flex;
+}
+
+/* Level 3 links */
+.csie-menu .sub-menu .sub-menu > .menu-item > a {
+  color: #606060;
+  font-size: 14px;
+  line-height: 1.2;
+}
+.csie-menu .sub-menu .sub-menu > .menu-item > a:hover {
+  color: #004f86;
+}
+
+/* ===== Mobile menu ===== */
+
+.csie-menu-mobile .menu-item {
+  display: block;
+  width: 100%;
+}
+
+.csie-menu-mobile .menu-item-has-children > a {
+  display: inline;
+}
+
+.csie-menu-mobile .csie-submenu-toggle {
+  vertical-align: middle;
+}
+
+.csie-menu-mobile .sub-menu {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+  padding-left: 16px;
+  width: 100%;
+}
+.csie-menu-mobile .sub-menu.is-open {
+  display: flex;
+}
+
+.csie-menu-mobile .sub-menu > .menu-item > a {
+  color: #606060;
+  font-size: 14px;
+}
+.csie-menu-mobile .sub-menu .sub-menu > .menu-item > a {
+  color: #808080;
+  font-size: 13px;
+}
