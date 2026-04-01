@@ -14,6 +14,7 @@ get_header(); ?>
     <?php get_template_part('template-parts/content', 'services'); ?>
     <?php get_template_part('template-parts/content', 'dynamics'); ?>
     <?php get_template_part('template-parts/content', 'technologies'); ?>
+    <?php get_template_part('template-parts/content', 'about'); ?>
 </main>
 
 <?php get_footer();

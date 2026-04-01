@@ -37,7 +37,7 @@ $categories = [
 $img_dir = esc_url(get_template_directory_uri() . '/assets/img/');
 ?>
 
-<section class="relative bg-white">
+<section class="relative bg-white mb-6.25 lg:mb-12.5">
     <!-- Blue background bar -->
     <div class="absolute left-0 right-0 top-[60px] lg:top-0 h-[349px] bg-[#004f86]"></div>
 
