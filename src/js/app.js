@@ -17,6 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     });
   }
+  // Technologies slider
+  const technologiesEl = document.querySelector('.csie-technologies-swiper');
+  if (technologiesEl) {
+    new Swiper(technologiesEl, {
+      slidesPerView: 1.2,
+      spaceBetween: 0,
+    });
+  }
+
   // Mobile menu toggle
   const menuToggle = document.getElementById('csie-menu-toggle');
   const mobileMenu = document.getElementById('csie-mobile-menu');

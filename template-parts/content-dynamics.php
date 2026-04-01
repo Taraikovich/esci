@@ -27,7 +27,7 @@ $cards = [
 $img_dir = esc_url(get_template_directory_uri() . '/assets/img/');
 ?>
 
-<section class="bg-white py-[60px] lg:py-[100px]">
+<section class="bg-white pt-[30px] pb-0 lg:py-[50px]">
     <div class="max-w-[1200px] mx-auto px-[15px] xl:px-0">
         <!-- Title -->
         <h2 class="text-[25px] lg:text-[40px] font-bold uppercase leading-[1.2] text-[#353535] mb-[30px] lg:mb-[50px]">

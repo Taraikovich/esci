@@ -13,7 +13,9 @@
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/3a49afcb-c269-4d42-8fe7-839d2ee4f8ec\" -o /root/csie/assets/img/dynamics-simple.png)",
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/02607c8c-0e2e-47b2-a061-e4f9e3a6d27d\" -o /root/csie/assets/img/dynamics-agile.png)",
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/62f64850-d082-42d7-8b4f-4c62dff90070\" -o /root/csie/assets/img/dynamics-powerful.png)",
-      "Bash(file /root/csie/assets/img/dynamics-*.png)"
+      "Bash(file /root/csie/assets/img/dynamics-*.png)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/176d85b3-6f31-4950-a674-89be7b9a99c3\" -o /root/csie/assets/img/technologies-building.jpg)",
+      "mcp__plugin_figma_figma__get_screenshot"
     ]
   }
 }
