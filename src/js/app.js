@@ -1,6 +1,22 @@
 import '../css/app.css';
+import Swiper from 'swiper';
+import 'swiper/css';
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Services slider
+  const servicesEl = document.querySelector('.csie-services-swiper');
+  if (servicesEl) {
+    new Swiper(servicesEl, {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      breakpoints: {
+        1024: {
+          slidesPerView: 3,
+          allowTouchMove: false,
+        },
+      },
+    });
+  }
   // Mobile menu toggle
   const menuToggle = document.getElementById('csie-menu-toggle');
   const mobileMenu = document.getElementById('csie-mobile-menu');

@@ -19,7 +19,7 @@
         </div>
 
         <!-- Footer content -->
-        <div class="relative max-w-[1200px] mx-auto px-4 md:px-[15px] py-[70px] lg:py-[100px]">
+        <div class="relative max-w-[1200px] mx-auto px-3.75 lg:px-0 py-[70px] lg:py-[100px]">
             <!-- Logo + Button row -->
             <div class="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-between">
                 <a href="<?php echo esc_url(home_url('/')); ?>">

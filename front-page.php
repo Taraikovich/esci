@@ -11,6 +11,7 @@ get_header(); ?>
 
 <main id="content">
     <?php get_template_part('template-parts/content', 'hero'); ?>
+    <?php get_template_part('template-parts/content', 'services'); ?>
 </main>
 
 <?php get_footer();
