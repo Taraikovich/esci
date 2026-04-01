@@ -1,4 +1,5 @@
 <?php
+
 /**
  * csie theme functions and definitions.
  *
@@ -14,7 +15,8 @@ define('CSIE_VERSION', '1.0.0');
 /**
  * Theme setup.
  */
-function csie_setup() {
+function csie_setup()
+{
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     add_theme_support('automatic-feed-links');
@@ -48,7 +50,8 @@ add_action('after_setup_theme', 'csie_setup');
 /**
  * Get Vite asset URL from manifest.
  */
-function csie_vite_asset($entry, $type = 'file') {
+function csie_vite_asset($entry, $type = 'file')
+{
     static $manifest = null;
 
     if ($manifest === null) {
@@ -73,7 +76,8 @@ function csie_vite_asset($entry, $type = 'file') {
 /**
  * Enqueue scripts and styles.
  */
-function csie_scripts() {
+function csie_scripts()
+{
     wp_enqueue_style('csie-style', get_stylesheet_uri(), [], CSIE_VERSION);
 
     $css_url = csie_vite_asset('src/js/app.js', 'css');
@@ -95,7 +99,8 @@ add_action('wp_enqueue_scripts', 'csie_scripts');
 /**
  * Register widget areas.
  */
-function csie_widgets_init() {
+function csie_widgets_init()
+{
     register_sidebar([
         'name'          => __('Sidebar', 'csie'),
         'id'            => 'sidebar-1',
@@ -121,9 +126,56 @@ function csie_widgets_init() {
 add_action('widgets_init', 'csie_widgets_init');
 
 /**
+ * Footer menu walker — top-level items as column headings, children as links.
+ */
+class Csie_Footer_Walker extends Walker_Nav_Menu
+{
+    public function start_lvl(&$output, $depth = 0, $args = null)
+    {
+        if ($depth === 0) {
+            $output .= '<div class="flex flex-col gap-[10px] font-medium text-sm items-center lg:items-start">';
+        }
+    }
+
+    public function end_lvl(&$output, $depth = 0, $args = null)
+    {
+        if ($depth === 0) {
+            $output .= '</div></div>';
+        }
+    }
+
+    public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+    {
+        if ($depth === 0) {
+            $output .= '<div class="flex flex-col gap-[15px] lg:gap-5 lg:max-w-52 items-center lg:items-start">';
+            $output .= '<h3 class="text-[20px] font-bold uppercase text-center lg:text-left">' . esc_html($item->title) . '</h3>';
+        } else {
+            $atts = [];
+            $atts['href'] = ! empty($item->url) ? $item->url : '';
+            $atts['class'] = 'hover:underline text-center lg:text-left';
+
+            $attributes = '';
+            foreach ($atts as $attr => $value) {
+                if (! empty($value)) {
+                    $attributes .= ' ' . $attr . '="' . esc_attr($value) . '"';
+                }
+            }
+
+            $output .= '<a' . $attributes . '>' . esc_html($item->title) . '</a>';
+        }
+    }
+
+    public function end_el(&$output, $item, $depth = 0, $args = null)
+    {
+        // Column closing is handled in end_lvl for top-level items
+    }
+}
+
+/**
  * Add Tailwind classes to nav menu links.
  */
-function csie_nav_menu_link_attributes($atts, $item, $args) {
+function csie_nav_menu_link_attributes($atts, $item, $args)
+{
     if ($args->theme_location === 'secondary') {
         $atts['class'] = 'text-white hover:text-white/80 transition-colors text-base leading-[1.2]';
     }
