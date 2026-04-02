@@ -24,7 +24,7 @@ $about_items = [
 $pattern_url = esc_url(get_template_directory_uri() . '/assets/img/pattern-about.png');
 ?>
 
-<section class="relative bg-[#f8f8f8] overflow-hidden py-[70px] lg:py-[100px] my-6.25 lg:my-12.5">
+<section class="relative bg-[#f8f8f8] overflow-hidden py-[70px] lg:py-[100px]">
     <!-- Decorative pattern -->
     <img
         src="<?php echo $pattern_url; ?>"

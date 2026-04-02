@@ -16,7 +16,13 @@
       "Bash(file /root/csie/assets/img/dynamics-*.png)",
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/176d85b3-6f31-4950-a674-89be7b9a99c3\" -o /root/csie/assets/img/technologies-building.jpg)",
       "mcp__plugin_figma_figma__get_screenshot",
-      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/39a1751e-24b6-4df5-810f-089920a1a560\" -o /root/csie/assets/img/pattern-technologies.svg)"
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/39a1751e-24b6-4df5-810f-089920a1a560\" -o /root/csie/assets/img/pattern-technologies.svg)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/0831231b-46a3-4d4c-8e93-3178a835e071\" -o /tmp/card-bg-1.svg)",
+      "Read(//tmp/**)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/604c8f0b-4233-4f54-9aa0-6705c3c1a34e\" -o /tmp/card-bg-2.svg)"
+    ],
+    "additionalDirectories": [
+      "/tmp"
     ]
   }
 }

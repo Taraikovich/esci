@@ -21,8 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const technologiesEl = document.querySelector('.csie-technologies-swiper');
   if (technologiesEl) {
     new Swiper(technologiesEl, {
-      slidesPerView: 1.2,
+      slidesPerView: 1,
       spaceBetween: 0,
+      breakpoints: {
+        1024: {
+          slidesPerView: 2,
+        },
+      },
     });
   }
 
