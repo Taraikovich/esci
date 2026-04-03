@@ -35,7 +35,8 @@
       "Bash(curl -sL https://www.figma.com/api/mcp/asset/f5f17786-39a0-4a95-aa3f-9f8b0a61e7c8 -o /root/csie/assets/img/partners/usdt.png)",
       "Bash(curl -sL https://www.figma.com/api/mcp/asset/8ca7f6e7-de04-410b-85fe-746a6464ba1b -o /root/csie/assets/img/partners/paymid.png)",
       "Bash(curl -sL https://www.figma.com/api/mcp/asset/5ebc7079-94e2-49ce-880d-f6364fcb588b -o /root/csie/assets/img/partners/visa.png)",
-      "Bash(file /root/csie/assets/img/partners/*)"
+      "Bash(file /root/csie/assets/img/partners/*)",
+      "Bash(wp post:*)"
     ],
     "additionalDirectories": [
       "/tmp"

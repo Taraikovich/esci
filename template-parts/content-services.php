@@ -6,26 +6,14 @@
  * @package csie
  */
 
-$services = [
-    [
-        'title' => __('Dynamics 365', 'csie'),
-        'text'  => __('Dynamics 365 is a product line of enterprise resource planning (ERP) and customer relationship management (CRM) applications. The system provides a purpose-built foundation across five industries, along with comprehensive, core ERP functionality for financial, human resources and operations management. We are glad to introduce you the new version of Microsoft Dynamics 365!', 'csie'),
-        'bg'    => 'bg-[#004f86]',
-        'color' => 'text-white',
-    ],
-    [
-        'title' => __('Web-solutions', 'csie'),
-        'text'  => __('Empower your business and make it available worldwide with the up-to-date web technologies! Offering a comprehensive Microsoft Sharepoint and a lightweight Axinom AxCMS along with the integration to ERP or legacy systems like Microsoft Dynamics AX allows us to strongly boost the effectivity of any business process.', 'csie'),
-        'bg'    => 'bg-[#00b1ff]',
-        'color' => 'text-white',
-    ],
-    [
-        'title' => __('Process Consulting', 'csie'),
-        'text'  => __('Do you think business processes in your organization are optimal? Do you think about transforming your IT infrastructure and operations into a strategic business asset? We support business growth and agility with consulting services that align processes and infrastructure and reduce costs. We help to transform IT into a provider of services and lay the foundations for increased effectivity and rapid development.', 'csie'),
-        'bg'    => 'bg-[#f8f8f8]',
-        'color' => 'text-[#353535]',
-    ],
-];
+$section_title = get_field('services_title');
+$button_text   = get_field('services_button_text');
+$button_link   = get_field('services_button_link');
+$services      = get_field('services_items');
+
+if (! $services) {
+    return;
+}
 
 $pattern_url = esc_url(get_template_directory_uri() . '/assets/img/services-pattern.png');
 ?>
@@ -34,9 +22,11 @@ $pattern_url = esc_url(get_template_directory_uri() . '/assets/img/services-patt
     <div class="max-w-[1200px] mx-auto px-[15px] xl:px-0 overflow-hidden">
         <!-- Header -->
         <div class="flex items-center justify-between mb-[30px] lg:mb-[49px]">
-            <h2 class="text-[25px] lg:text-[40px] font-bold uppercase leading-[1.2] text-[#353535]">
-                <?php esc_html_e('Our services', 'csie'); ?>
-            </h2>
+            <?php if ($section_title) : ?>
+                <h2 class="text-[25px] lg:text-[40px] font-bold uppercase leading-[1.2] text-[#353535]">
+                    <?php echo esc_html($section_title); ?>
+                </h2>
+            <?php endif; ?>
 
             <!-- Swipe hint (mobile only) -->
             <div class="lg:hidden">
@@ -47,31 +37,35 @@ $pattern_url = esc_url(get_template_directory_uri() . '/assets/img/services-patt
             </div>
 
             <!-- Button (desktop only) -->
-            <a href="#" class="hidden lg:flex items-center justify-between gap-4 bg-[#004f86] text-white rounded-full px-8 h-[50px] w-[220px] text-base font-medium leading-[1.2] hover:bg-[#00b1ff] transition-colors">
-                <span><?php esc_html_e('Work with us', 'csie'); ?></span>
-                <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11 1L15 5M15 5L11 9M15 5H1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </a>
+            <?php if ($button_text && $button_link) : ?>
+                <a href="<?php echo esc_url($button_link); ?>" class="hidden lg:flex items-center justify-between gap-4 bg-[#004f86] text-white rounded-full px-8 h-[50px] w-[220px] text-base font-medium leading-[1.2] hover:bg-[#00b1ff] transition-colors">
+                    <span><?php echo esc_html($button_text); ?></span>
+                    <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 1L15 5M15 5L11 9M15 5H1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+            <?php endif; ?>
         </div>
 
         <!-- Cards Swiper -->
         <div class="swiper csie-services-swiper" style="overflow: visible;">
             <div class="swiper-wrapper">
                 <?php foreach ($services as $service) :
-                    $is_light = ($service['bg'] === 'bg-[#f8f8f8]');
-                    $text_color = $is_light ? 'text-[#606060]' : 'text-white';
+                    $bg_color   = $service['service_bg_color'] ?: '#004f86';
+                    $text_color = $service['service_text_color'] ?: '#ffffff';
+                    $is_light   = csie_is_light_color($bg_color);
+                    $body_color = $is_light ? '#606060' : '#ffffff';
                     $pattern_opacity = $is_light ? '' : 'opacity-10';
                 ?>
                     <div class="swiper-slide">
-                        <div class="group <?php echo esc_attr($service['bg']); ?> relative overflow-hidden p-[25px] lg:p-[30px] h-[400px] lg:h-[460px]">
+                        <div class="group relative overflow-hidden p-[25px] lg:p-[30px] h-[400px] lg:h-[460px]" style="background-color: <?php echo esc_attr($bg_color); ?>">
                             <!-- Text content -->
                             <div class="relative z-10 flex flex-col gap-[15px] lg:gap-[20px]">
-                                <h3 class="text-[20px] lg:text-[24px] font-bold uppercase leading-[1.2] <?php echo esc_attr($service['color']); ?>">
-                                    <?php echo esc_html($service['title']); ?>
+                                <h3 class="text-[20px] lg:text-[24px] font-bold uppercase leading-[1.2]" style="color: <?php echo esc_attr($text_color); ?>">
+                                    <?php echo esc_html($service['service_title']); ?>
                                 </h3>
-                                <p class="text-[14px] lg:text-base leading-[1.2] <?php echo esc_attr($text_color); ?>">
-                                    <?php echo esc_html($service['text']); ?>
+                                <p class="text-[14px] lg:text-base leading-[1.2]" style="color: <?php echo esc_attr($body_color); ?>">
+                                    <?php echo esc_html($service['service_text']); ?>
                                 </p>
                             </div>
                             <!-- Decorative pattern -->

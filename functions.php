@@ -185,3 +185,16 @@ function csie_nav_menu_link_attributes($atts, $item, $args)
     return $atts;
 }
 add_filter('nav_menu_link_attributes', 'csie_nav_menu_link_attributes', 10, 3);
+
+/**
+ * Check if a hex color is light (luminance > 0.5).
+ */
+function csie_is_light_color($hex)
+{
+    $hex = ltrim($hex, '#');
+    $r = hexdec(substr($hex, 0, 2)) / 255;
+    $g = hexdec(substr($hex, 2, 2)) / 255;
+    $b = hexdec(substr($hex, 4, 2)) / 255;
+
+    return (0.299 * $r + 0.587 * $g + 0.114 * $b) > 0.6;
+}
