@@ -36,8 +36,8 @@ $pattern_url = esc_url(get_template_directory_uri() . '/assets/img/pattern-about
         <!-- Desktop: row, Mobile: column -->
         <div class="flex flex-col lg:flex-row gap-[50px] lg:gap-[20px] items-flex-start">
             <?php foreach ($about_items as $item) : ?>
-                <div class="flex flex-col items-center gap-[20px] w-full lg:w-1/3">
-                    <div class="flex items-center justify-center size-[52px] bg-[#00b1ff]">
+                <div class="group flex flex-col items-center gap-[20px] w-full lg:w-1/3">
+                    <div class="flex items-center justify-center size-[52px] bg-[#00b1ff] transition-transform duration-500 group-hover:scale-130">
                         <span class="text-[20px] lg:text-[24px] font-bold uppercase leading-[1.2] text-white">
                             <?php echo esc_html($item['number']); ?>
                         </span>

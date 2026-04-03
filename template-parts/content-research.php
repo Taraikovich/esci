@@ -104,8 +104,8 @@ $csie_research_cards = array(
             <div class="swiper-wrapper">
                 <?php foreach ($csie_research_cards as $csie_card) : ?>
                     <div class="swiper-slide">
-                        <div class="bg-[#f8f8f8] min-h-[494px] p-[30px]">
-                            <h3 class="text-[20px] font-bold uppercase leading-[1.2] text-[#353535] mb-[15px]">
+                        <div class="group bg-[#f8f8f8] min-h-[494px] p-[30px]">
+                            <h3 class="text-[20px] font-bold uppercase leading-[1.2] text-[#353535] mb-[15px] transition-colors duration-500 group-hover:text-[#00b1ff]">
                                 <?php echo esc_html($csie_card['title']); ?>
                             </h3>
 

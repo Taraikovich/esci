@@ -38,7 +38,7 @@ $img_dir = esc_url(get_template_directory_uri() . '/assets/img/');
         <!-- Cards -->
         <div class="flex flex-wrap gap-[10px] lg:gap-[20px]">
             <?php foreach ($cards as $card) : ?>
-                <div class="bg-[#f8f8f8] flex flex-col gap-[20px] p-[25px] lg:p-[30px] w-full sm:w-[330px] lg:w-[calc(33.333%-14px)]">
+                <div class="group bg-[#f8f8f8] flex flex-col gap-[20px] p-[25px] lg:p-[30px] w-full sm:w-[330px] lg:w-[calc(33.333%-14px)]">
                     <!-- Card header -->
                     <div class="flex items-center justify-between">
                         <h3 class="text-[20px] lg:text-[24px] font-bold uppercase leading-[1.2] text-[#353535]">
@@ -50,7 +50,7 @@ $img_dir = esc_url(get_template_directory_uri() . '/assets/img/');
                             <img
                                 src="<?php echo $img_dir . esc_attr($card['image']); ?>"
                                 alt="<?php echo esc_attr($card['title']); ?>"
-                                class="absolute inset-0 m-auto w-[49px] h-[49px] lg:w-[86px] lg:h-[87px] object-contain">
+                                class="absolute inset-0 m-auto w-[49px] h-[49px] lg:w-[86px] lg:h-[87px] object-contain transition-transform duration-500 group-hover:scale-120">
                         </div>
                     </div>
                     <!-- Card text -->

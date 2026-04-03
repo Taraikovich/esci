@@ -64,7 +64,7 @@ $pattern_url = esc_url(get_template_directory_uri() . '/assets/img/services-patt
                     $pattern_opacity = $is_light ? '' : 'opacity-10';
                 ?>
                     <div class="swiper-slide">
-                        <div class="<?php echo esc_attr($service['bg']); ?> relative overflow-hidden p-[25px] lg:p-[30px] h-[400px] lg:h-[460px]">
+                        <div class="group <?php echo esc_attr($service['bg']); ?> relative overflow-hidden p-[25px] lg:p-[30px] h-[400px] lg:h-[460px]">
                             <!-- Text content -->
                             <div class="relative z-10 flex flex-col gap-[15px] lg:gap-[20px]">
                                 <h3 class="text-[20px] lg:text-[24px] font-bold uppercase leading-[1.2] <?php echo esc_attr($service['color']); ?>">
@@ -78,7 +78,7 @@ $pattern_url = esc_url(get_template_directory_uri() . '/assets/img/services-patt
                             <img
                                 src="<?php echo $pattern_url; ?>"
                                 alt=""
-                                class="absolute bottom-0 left-1/2 top-1/4 -translate-x-1/2 w-[786px] max-w-none pointer-events-none <?php echo esc_attr($pattern_opacity); ?>"
+                                class="absolute bottom-0 left-1/2 top-1/4 -translate-x-1/2 w-[786px] max-w-none pointer-events-none transition-transform duration-500 group-hover:scale-110 <?php echo esc_attr($pattern_opacity); ?>"
                                 aria-hidden="true">
                         </div>
                     </div>

@@ -60,11 +60,11 @@ $img_dir = esc_url(get_template_directory_uri() . '/assets/img/');
                 </div>
             </div>
         </div>
-        <div class="w-[390px] h-[520px] z-10 hidden lg:block">
+        <div class="w-[390px] h-[520px] z-10 hidden lg:block overflow-hidden">
             <img
                 src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/technologies-building.png'); ?>"
                 alt="<?php esc_attr_e('CS&IE Data Consulting team', 'csie'); ?>"
-                class="w-full h-full object-cover">
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
         </div>
     </div>
 </section>
