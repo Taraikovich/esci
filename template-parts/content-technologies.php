@@ -38,7 +38,7 @@ $img_dir = esc_url(get_template_directory_uri() . '/assets/img/');
 ?>
 
 <section class="relative py-12.5 lg:py-25 bg-white before:content-[''] before:block before:absolute before:top-0 before:w-full before:h-[350px] before:bg-[#004F86]">
-    <div class="container relative flex justify-between items-end re mx-auto lg:max-w-300 px-3.75 lg:px-0 overflow-hidden">
+    <div class="container relative flex justify-between items-end mx-auto lg:max-w-300 px-3.75 lg:px-0 overflow-hidden">
         <div>
             <div class="swiper csie-technologies-swiper w-[320px] lg:w-[660px] h-fit" style="overflow: visible;">
                 <div class="swiper-wrapper">

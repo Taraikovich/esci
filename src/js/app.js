@@ -3,6 +3,20 @@ import Swiper from 'swiper';
 import 'swiper/css';
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Automation slider
+  const automationEl = document.querySelector('.csie-automation');
+  if (automationEl) {
+    new Swiper(automationEl, {
+      slidesPerView: 1.2,
+      spaceBetween: 0,
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+        },
+      },
+    });
+  }
+
   // Services slider
   const servicesEl = document.querySelector('.csie-services-swiper');
   if (servicesEl) {
@@ -17,6 +31,20 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     });
   }
+  // Research directions slider
+  const researchEl = document.querySelector('.csie-research-swiper');
+  if (researchEl) {
+    new Swiper(researchEl, {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      breakpoints: {
+        1024: {
+          slidesPerView: 3,
+        },
+      },
+    });
+  }
+
   // Technologies slider
   const technologiesEl = document.querySelector('.csie-technologies-swiper');
   if (technologiesEl) {

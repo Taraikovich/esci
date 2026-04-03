@@ -15,6 +15,8 @@ get_header(); ?>
     <?php get_template_part('template-parts/content', 'dynamics'); ?>
     <?php get_template_part('template-parts/content', 'technologies'); ?>
     <?php get_template_part('template-parts/content', 'about'); ?>
+    <?php get_template_part('template-parts/content', 'automation'); ?>
+    <?php get_template_part('template-parts/content', 'research'); ?>
 </main>
 
 <?php get_footer();
