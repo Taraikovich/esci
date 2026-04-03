@@ -19,7 +19,23 @@
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/39a1751e-24b6-4df5-810f-089920a1a560\" -o /root/csie/assets/img/pattern-technologies.svg)",
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/0831231b-46a3-4d4c-8e93-3178a835e071\" -o /tmp/card-bg-1.svg)",
       "Read(//tmp/**)",
-      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/604c8f0b-4233-4f54-9aa0-6705c3c1a34e\" -o /tmp/card-bg-2.svg)"
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/604c8f0b-4233-4f54-9aa0-6705c3c1a34e\" -o /tmp/card-bg-2.svg)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/a8f875cd-f0f2-4ec1-a896-0265d5aa55e4\" -o mastercard.png)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/4c15f396-c862-46e4-aaab-176ee9f588c3\" -o gfi.svg)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/6459ddf9-698d-4afc-8095-9474d11f726c\" -o herka.svg)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/38bcebcd-5e78-4b71-bcc6-500912cbaeb1\" -o leiner.jpg)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/f069d8c7-3573-4350-9647-efff937db0c6\" -o mobiletouch.svg)",
+      "Bash(curl -sL https://www.figma.com/api/mcp/asset/dadd25f7-65a9-4fa9-8a2b-54d1e8737c94 -o /root/csie/assets/img/partners/blaha.svg)",
+      "Bash(curl -sL https://www.figma.com/api/mcp/asset/accb1fb8-9ec7-4f2b-8c87-00c302c7ace9 -o /root/csie/assets/img/partners/cardbox.svg)",
+      "Bash(curl -sL https://www.figma.com/api/mcp/asset/cb89c4a9-7353-405d-8b21-1b9923427bd7 -o /root/csie/assets/img/partners/cdkrone.svg)",
+      "Bash(curl -sL https://www.figma.com/api/mcp/asset/f8918258-58f7-4aeb-9ace-7d5900a1cb7e -o /root/csie/assets/img/partners/chanel.svg)",
+      "Bash(curl -sL https://www.figma.com/api/mcp/asset/88aa0fbe-f430-4ebf-a891-5a785a128051 -o /root/csie/assets/img/partners/dynea.svg)",
+      "Bash(curl -sL https://www.figma.com/api/mcp/asset/0de1c957-7dc3-44f5-97c2-b1b27dc56c80 -o /root/csie/assets/img/partners/korapay.png)",
+      "Bash(curl -sL https://www.figma.com/api/mcp/asset/191a61a4-d618-4c12-ad4c-688b262f7afa -o /root/csie/assets/img/partners/banktransfer.png)",
+      "Bash(curl -sL https://www.figma.com/api/mcp/asset/f5f17786-39a0-4a95-aa3f-9f8b0a61e7c8 -o /root/csie/assets/img/partners/usdt.png)",
+      "Bash(curl -sL https://www.figma.com/api/mcp/asset/8ca7f6e7-de04-410b-85fe-746a6464ba1b -o /root/csie/assets/img/partners/paymid.png)",
+      "Bash(curl -sL https://www.figma.com/api/mcp/asset/5ebc7079-94e2-49ce-880d-f6364fcb588b -o /root/csie/assets/img/partners/visa.png)",
+      "Bash(file /root/csie/assets/img/partners/*)"
     ],
     "additionalDirectories": [
       "/tmp"

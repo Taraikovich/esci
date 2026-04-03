@@ -17,6 +17,7 @@ get_header(); ?>
     <?php get_template_part('template-parts/content', 'about'); ?>
     <?php get_template_part('template-parts/content', 'automation'); ?>
     <?php get_template_part('template-parts/content', 'research'); ?>
+    <?php get_template_part('template-parts/content', 'partners'); ?>
 </main>
 
 <?php get_footer();
