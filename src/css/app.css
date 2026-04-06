@@ -219,3 +219,19 @@ nav li {
   color: #808080;
   font-size: 13px;
 }
+
+.csie-service-research-swiper .swiper-slide {
+  height: auto !important;
+}
+
+@media (min-width: 1024px) {
+  .csie-experience-swiper .swiper-wrapper {
+    flex-wrap: wrap;
+  }
+  .csie-experience-swiper .swiper-slide {
+    width: calc(33.333%) !important;
+  }
+  .csie-experience-swiper .swiper-slide:nth-child(n+4) {
+    margin-top: -50px;
+  }
+}

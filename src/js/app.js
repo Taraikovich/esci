@@ -1,6 +1,8 @@
 import '../css/app.css';
 import Swiper from 'swiper';
+import { Grid } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/grid';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Automation slider
@@ -8,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (automationEl) {
     new Swiper(automationEl, {
       slidesPerView: 1.2,
-      spaceBetween: 0,
+      spaceBetween: -20,
       breakpoints: {
         1024: {
           slidesPerView: 4,
@@ -54,6 +56,76 @@ document.addEventListener('DOMContentLoaded', () => {
       breakpoints: {
         1024: {
           slidesPerView: 2,
+        },
+      },
+    });
+  }
+
+  // Solutions slider
+  const solutionsEl = document.querySelector('.csie-solutions-swiper');
+  if (solutionsEl) {
+    new Swiper(solutionsEl, {
+      slidesPerView: 1.2,
+      spaceBetween: -20,
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: -20,
+        },
+      },
+    });
+  }
+
+  // Experience cards slider
+  const experienceEl = document.querySelector('.csie-experience-swiper');
+  if (experienceEl) {
+    new Swiper(experienceEl, {
+      slidesPerView: 1.2,
+      spaceBetween: -20,
+      breakpoints: {
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 0,
+          enabled: false,
+        },
+      },
+    });
+  }
+
+  // Service research slider
+  const serviceResearchEl = document.querySelector('.csie-service-research-swiper');
+  if (serviceResearchEl) {
+    new Swiper(serviceResearchEl, {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      breakpoints: {
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 0,
+        },
+      },
+    });
+  }
+
+  // Uniqueness cards slider
+  const uniquenessEl = document.querySelector('.csie-uniqueness-swiper');
+  if (uniquenessEl) {
+    new Swiper(uniquenessEl, {
+      modules: [Grid],
+      slidesPerView: 1,
+      spaceBetween: 10,
+      grid: {
+        rows: 3,
+        fill: 'row',
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+          grid: {
+            rows: 2,
+            fill: 'row',
+          },
         },
       },
     });
