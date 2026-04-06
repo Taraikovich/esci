@@ -6,22 +6,13 @@
  * @package csie
  */
 
-$about_items = [
-    [
-        'number' => '01',
-        'text'   => __('We have been acquiring our experience and developing products, solutions, and customer projects using Microsoft technologies since 1995', 'csie'),
-    ],
-    [
-        'number' => '02',
-        'text'   => __('We are a Microsoft Gold Certified Partner in the competence "Enterprise Resource Planning" (Dynamics 365) and a Microsoft Silver Certified Partner in the competence "Application Development"', 'csie'),
-    ],
-    [
-        'number' => '03',
-        'text'   => __('We specialize in Microsoft .NET based development – consulting and programming – and outsourcing services', 'csie'),
-    ],
-];
+$about_items = get_field('about_items');
 
-$pattern_url = esc_url(get_template_directory_uri() . '/assets/img/pattern-about.png');
+if (! $about_items) {
+    return;
+}
+
+$pattern_url = esc_url(get_template_directory_uri() . '/assets/img/pattern-research.png');
 ?>
 
 <section class="relative bg-[#f8f8f8] overflow-hidden py-[70px] lg:py-[100px]">
@@ -39,11 +30,11 @@ $pattern_url = esc_url(get_template_directory_uri() . '/assets/img/pattern-about
                 <div class="group flex flex-col items-center gap-[20px] w-full lg:w-1/3">
                     <div class="flex items-center justify-center size-[52px] bg-[#00b1ff] transition-transform duration-500 group-hover:scale-130">
                         <span class="text-[20px] lg:text-[24px] font-bold uppercase leading-[1.2] text-white">
-                            <?php echo esc_html($item['number']); ?>
+                            <?php echo esc_html($item['about_number']); ?>
                         </span>
                     </div>
                     <p class="text-[14px] lg:text-base font-medium leading-[1.2] text-[#353535] text-center max-w-[350px]">
-                        <?php echo esc_html($item['text']); ?>
+                        <?php echo esc_html($item['about_text']); ?>
                     </p>
                 </div>
             <?php endforeach; ?>

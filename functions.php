@@ -187,6 +187,16 @@ function csie_nav_menu_link_attributes($atts, $item, $args)
 add_filter('nav_menu_link_attributes', 'csie_nav_menu_link_attributes', 10, 3);
 
 /**
+ * Allow SVG uploads.
+ */
+function csie_mime_types($mimes)
+{
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'csie_mime_types');
+
+/**
  * Check if a hex color is light (luminance > 0.5).
  */
 function csie_is_light_color($hex)

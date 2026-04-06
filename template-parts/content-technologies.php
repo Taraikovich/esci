@@ -6,35 +6,11 @@
  * @package csie
  */
 
-$categories = [
-    [
-        'title' => __('Programming tools and Technologies', 'csie'),
-        'fill'  => '#F8F8F8',
-        'items' => [
-            __('Microsoft .NET Framework', 'csie'),
-            __('Microsoft Visual C++', 'csie'),
-            __('Microsoft Visual C#', 'csie'),
-            __('Microsoft Visual Basic', 'csie'),
-            __('Microsoft Visual Basic .NET', 'csie'),
-            __('ASP', 'csie'),
-            __('ASP.NET', 'csie'),
-            __('Web Services', 'csie'),
-        ],
-    ],
-    [
-        'title' => __('Database System', 'csie'),
-        'fill'  => '#FFFFFF',
-        'items' => [
-            __('Microsoft SQL Server', 'csie'),
-            __('Microsoft Analysis Services', 'csie'),
-            __('Microsoft Reporting Services', 'csie'),
-            __('Microsoft Access', 'csie'),
-            __('Oracle SQL Server', 'csie'),
-        ],
-    ],
-];
+$categories = get_field('technologies_categories');
 
-$img_dir = esc_url(get_template_directory_uri() . '/assets/img/');
+if (! $categories) {
+    return;
+}
 ?>
 
 <section class="relative py-12.5 lg:py-25 bg-white before:content-[''] before:block before:absolute before:top-0 before:w-full before:h-[350px] before:bg-[#004F86]">
@@ -46,13 +22,13 @@ $img_dir = esc_url(get_template_directory_uri() . '/assets/img/');
                         <div class="swiper-slide">
                             <div>
                                 <div class="tag w-[360px] min-h-[460px] pt-20 px-10 pb-10"
-                                    style="background-color: <?php echo esc_attr($category['fill']); ?>; clip-path: polygon(125px 0%, 155px 40px, 100% 40px, 100% 100%, 0 100%, 0% 0%, 0 0)">
-                                    <h4 class="text-[#222] text-2xl font-bold uppercase leading-[1.2] mb-5"><?php echo esc_html($category['title']); ?></h4>
-                                    <ul class="flex flex-col gap-2.5 text-base not-italic font-normal text-[#606060] list-none">
-                                        <?php foreach ($category['items'] as $item) : ?>
-                                            <li class="flex items-center gap-2.5"><span class="size-1.25 shrink-0 bg-[#00b1ff]"></span><?php echo esc_html($item); ?></li>
-                                        <?php endforeach; ?>
-                                    </ul>
+                                    style="background-color: <?php echo esc_attr($category['category_bg_color']); ?>; clip-path: polygon(125px 0%, 155px 40px, 100% 40px, 100% 100%, 0 100%, 0% 0%, 0 0)">
+                                    <h4 class="text-[#222] text-2xl font-bold uppercase leading-[1.2] mb-5"><?php echo esc_html($category['category_title']); ?></h4>
+                                    <?php if (!empty($category['category_items'])) : ?>
+                                        <div class="text-base font-normal text-[#606060] [&_ul]:list-none [&_ul]:p-0 [&_ul]:m-0 [&_ul]:space-y-2.5 [&_li]:relative [&_li]:pl-[15px] [&_li]:before:content-[''] [&_li]:before:absolute [&_li]:before:left-0 [&_li]:before:top-[9px] [&_li]:before:size-1.25 [&_li]:before:bg-[#00b1ff]">
+                                            <?php echo wp_kses_post($category['category_items']); ?>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>

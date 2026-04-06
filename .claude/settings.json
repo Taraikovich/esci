@@ -89,7 +89,11 @@
       "Bash(identify /root/csie/assets/img/footer-pattern.png)",
       "Bash(ls /root/csie/assets/img/pattern*)",
       "Bash(curl -s -o /root/csie/assets/img/pattern-research.png \"https://www.figma.com/api/mcp/asset/d05c918f-1437-4a53-87a2-060dd1b93878\")",
-      "Bash(wp --path=/home/wordpress/www --allow-root post list --post_type=acf-field --post_parent=194 --fields=ID,post_title,post_excerpt,menu_order --format=table)"
+      "Bash(wp --path=/home/wordpress/www --allow-root post list --post_type=acf-field --post_parent=194 --fields=ID,post_title,post_excerpt,menu_order --format=table)",
+      "Bash(wp --path=/home/wordpress/www --allow-root post list --post_type=acf-field --post_parent=127 --fields=ID,post_title,post_excerpt,post_name,menu_order --format=table)",
+      "Bash(wp --path=/home/wordpress/www --allow-root post list --post_type=acf-field --post_parent=187 --fields=ID,post_title,post_excerpt,post_name,menu_order --format=table)",
+      "Bash(wp --path=/home/wordpress/www --allow-root option get acf_next_field_key)",
+      "Bash(wp --path=/home/wordpress/www --allow-root db query \"SELECT MAX\\(CAST\\(SUBSTRING\\(post_name, 7\\) AS UNSIGNED\\)\\) FROM wp_posts WHERE post_type='acf-field' AND post_name LIKE 'field_%'\" --skip-column-names)"
     ],
     "additionalDirectories": [
       "/tmp"
