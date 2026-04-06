@@ -176,6 +176,9 @@ class Csie_Footer_Walker extends Walker_Nav_Menu
  */
 function csie_nav_menu_link_attributes($atts, $item, $args)
 {
+    if ($args->theme_location === 'primary') {
+        $atts['class'] = 'text-[#353535] hover:text-[#00B1FF] transition-colors text-base leading-[1.2]';
+    }
     if ($args->theme_location === 'secondary') {
         $atts['class'] = 'text-white hover:text-white/80 transition-colors text-base leading-[1.2]';
     }

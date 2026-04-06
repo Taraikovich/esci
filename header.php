@@ -39,7 +39,7 @@
                 wp_nav_menu([
                     'theme_location' => 'primary',
                     'container'      => false,
-                    'items_wrap'     => '<ul class="csie-menu flex items-center gap-10">%3$s</ul>',
+                    'items_wrap'     => '<ul class="csie-menu flex items-center gap-10 flex-wrap">%3$s</ul>',
                     'depth'          => 0,
                     'fallback_cb'    => false,
                 ]);

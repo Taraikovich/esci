@@ -56,6 +56,7 @@ nav li {
 /* Top-level items: relative for dropdown positioning */
 .csie-menu > .menu-item {
   position: relative;
+  max-width: 150px;
 }
 
 /* Top-level link */
@@ -67,10 +68,11 @@ nav li {
   font-size: 16px;
   line-height: 1.2;
   transition: color 0.2s;
-  white-space: nowrap;
+  white-space: normal;
+  word-wrap: break-word;
 }
 .csie-menu > .menu-item > a:hover {
-  color: #004f86;
+  color: #00B1FF;
 }
 
 /* No chevron on top-level items */
@@ -122,7 +124,7 @@ nav li {
   transition: color 0.2s;
 }
 .csie-menu .sub-menu > .menu-item > a:hover {
-  color: #004f86;
+  color: #00B1FF;
 }
 
 /* Level 2 item header row (link + arrow toggle) */
@@ -133,7 +135,8 @@ nav li {
   gap: 0;
 }
 .csie-menu .sub-menu > .menu-item-has-children > a {
-  flex: none;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 /* Arrow toggle button for nested items */
@@ -181,7 +184,7 @@ nav li {
   line-height: 1.2;
 }
 .csie-menu .sub-menu .sub-menu > .menu-item > a:hover {
-  color: #004f86;
+  color: #00B1FF;
 }
 
 /* ===== Mobile menu ===== */
