@@ -1,8 +1,9 @@
 import '../css/app.css';
 import Swiper from 'swiper';
-import { Grid } from 'swiper/modules';
+import { Grid, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/grid';
+import 'swiper/css/pagination';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Automation slider
@@ -23,6 +24,59 @@ document.addEventListener('DOMContentLoaded', () => {
   const servicesEl = document.querySelector('.csie-services-swiper');
   if (servicesEl) {
     new Swiper(servicesEl, {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      breakpoints: {
+        1024: {
+          slidesPerView: 3,
+          allowTouchMove: false,
+        },
+      },
+    });
+  }
+  // Company services grid slider (mobile: 3 cards per slide)
+  const servicesGridEl = document.querySelector('.csie-services-grid-swiper');
+  if (servicesGridEl) {
+    new Swiper(servicesGridEl, {
+      modules: [Pagination],
+      slidesPerView: 1,
+      spaceBetween: 20,
+      pagination: {
+        el: '.csie-services-grid-pagination',
+        clickable: true,
+        bulletClass: 'w-[8px] h-[8px] rounded-full bg-[#d9d9d9] cursor-pointer transition-colors',
+        bulletActiveClass: '!bg-[#00b1ff]',
+      },
+    });
+  }
+  // Company expertise slider
+  const expertiseEl = document.querySelector('.csie-expertise-swiper');
+  if (expertiseEl) {
+    new Swiper(expertiseEl, {
+      modules: [Grid],
+      slidesPerView: 1,
+      spaceBetween: 20,
+      grid: {
+        rows: 2,
+        fill: 'row',
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+          grid: {
+            rows: 1,
+            fill: 'row',
+          },
+          allowTouchMove: false,
+        },
+      },
+    });
+  }
+  // Company profile slider
+  const companyProfileEl = document.querySelector('.csie-company-profile-swiper');
+  if (companyProfileEl) {
+    new Swiper(companyProfileEl, {
       slidesPerView: 1,
       spaceBetween: 0,
       breakpoints: {

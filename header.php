@@ -15,7 +15,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('bg-gray-50 text-gray-900 font-sans antialiased'); ?>>
+<body <?php body_class('text-gray-900 font-sans antialiased'); ?>>
     <?php wp_body_open(); ?>
 
     <a class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:rounded focus:shadow" href="#content">

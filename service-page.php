@@ -15,6 +15,7 @@ get_header(); ?>
     </div>
 
     <?php get_template_part('template-parts/content', 'service-hero'); ?>
+    <?php get_template_part('template-parts/content', 'service-nav'); ?>
     <?php get_template_part('template-parts/content', 'service-partnership'); ?>
     <?php get_template_part('template-parts/content', 'service-specialization'); ?>
     <?php get_template_part('template-parts/content', 'service-uniqueness'); ?>
@@ -22,7 +23,6 @@ get_header(); ?>
     <?php get_template_part('template-parts/content', 'service-research'); ?>
     <?php get_template_part('template-parts/content', 'service-solutions'); ?>
     <?php get_template_part('template-parts/content', 'service-ptm'); ?>
-
 </main>
 
 <?php get_footer();
