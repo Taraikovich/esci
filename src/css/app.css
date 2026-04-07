@@ -409,3 +409,56 @@ nav li {
   color: #df4253;
   margin-top: 4px;
 }
+
+/* ===== Career vacancies accordion ===== */
+
+.csie-vacancy-content {
+  overflow: hidden;
+  height: 0;
+  transition: height 0.3s ease;
+}
+
+.csie-vacancy-icon {
+  display: grid;
+}
+.csie-vacancy-icon svg {
+  grid-area: 1 / 1;
+  transition: opacity 0.3s ease;
+}
+.csie-icon-plus {
+  opacity: 1;
+}
+.csie-icon-minus {
+  opacity: 0;
+}
+.csie-vacancy-item.is-open .csie-icon-plus {
+  opacity: 0;
+}
+.csie-vacancy-item.is-open .csie-icon-minus {
+  opacity: 1;
+}
+
+.csie-vacancy-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.csie-vacancy-list li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.csie-vacancy-list li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: #00b1ff;
+  flex-shrink: 0;
+  position: relative;
+  top: -2px;
+}

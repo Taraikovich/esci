@@ -219,7 +219,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Submenu arrow toggles
   initSubmenuToggles();
+
+  // Vacancy accordion
+  initVacancyAccordion();
 });
+
+function initVacancyAccordion() {
+  document.querySelectorAll('.csie-vacancy-toggle').forEach((btn) => {
+    const item = btn.closest('.csie-vacancy-item');
+    const content = item.querySelector('.csie-vacancy-content');
+
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('is-open');
+
+      if (isOpen) {
+        // Closing: set explicit height, then animate to 0
+        content.style.height = content.scrollHeight + 'px';
+        content.offsetHeight;
+        content.style.height = '0';
+        item.classList.remove('is-open');
+      } else {
+        // Opening: animate from 0 to scrollHeight
+        content.style.height = content.scrollHeight + 'px';
+        item.classList.add('is-open');
+      }
+    });
+
+    content.addEventListener('transitionend', () => {
+      if (item.classList.contains('is-open')) {
+        content.style.height = 'auto';
+      }
+    });
+  });
+}
 
 function initSubmenuToggles() {
   const chevronSvg = '<svg viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5.5 5L10 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
