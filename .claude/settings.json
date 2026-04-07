@@ -137,7 +137,16 @@
       "Bash(wp --path=/home/wordpress/www --allow-root post meta update 17 team_partnership_text_right 'Our company creates open partner relationships with its customers. Software Outsourcing means for us not only effective collaboration but also personal support and team work.')",
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/f636b51b-e5d1-4b2d-9b32-30baefb02881\" -o /tmp/team-person-photo.png)",
       "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/819d2fa0-33eb-4eb8-8a1f-a9063f9b857c\" -o /tmp/team-card-pattern.png)",
-      "Bash(wp --path=/home/wordpress/www --allow-root media import /tmp/team-person-photo.png --title='Yuri Mezhynski' --porcelain)"
+      "Bash(wp --path=/home/wordpress/www --allow-root media import /tmp/team-person-photo.png --title='Yuri Mezhynski' --porcelain)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/86bdfcbb-57c7-4515-a926-8f8dc58f2b34\" -o /tmp/office-austria.jpg)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/ad413f96-1275-4933-9101-c3d50871cf4e\" -o /tmp/office-britain.jpg)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/33b63b06-7271-4a31-ac11-083c724e3ea5\" -o /tmp/icon-phone.svg)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/99729207-b125-4301-8586-f0cb6f52fd33\" -o /tmp/icon-email.svg)",
+      "Bash(wp media:*)",
+      "Bash(curl -sL \"https://www.figma.com/api/mcp/asset/a8d5f45a-b234-446a-bdb8-c6c244d9be34\" -o /tmp/arrow-right.svg)",
+      "Bash(wp plugin:*)",
+      "Bash(ls /root/csie/assets/img/icon-arrow*)",
+      "Bash(ls /root/csie/assets/img/arrow*)"
     ],
     "additionalDirectories": [
       "/tmp"

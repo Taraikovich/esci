@@ -15,11 +15,8 @@ get_header(); ?>
     </div>
 
     <?php get_template_part('template-parts/content', 'team-hero'); ?>
-
     <?php get_template_part('template-parts/content', 'team-partnership'); ?>
-
     <?php get_template_part('template-parts/content', 'team-heads'); ?>
-
 </main>
 
 <?php get_footer();
