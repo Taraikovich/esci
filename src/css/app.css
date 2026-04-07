@@ -462,3 +462,37 @@ nav li {
   position: relative;
   top: -2px;
 }
+
+/* ===== Conditions accordion content ===== */
+
+.csie-conditions-text p {
+  margin-bottom: 20px;
+}
+.csie-conditions-text p:last-child {
+  margin-bottom: 0;
+}
+
+.csie-conditions-text strong,
+.csie-conditions-text b {
+  font-weight: 600;
+  color: #353535;
+}
+
+.csie-conditions-text ol {
+  list-style: none;
+  padding-left: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.csie-conditions-text ol li {
+  display: flex;
+  gap: 0;
+}
+
+.csie-conditions-text ol li strong,
+.csie-conditions-text ol li b {
+  flex-shrink: 0;
+}
