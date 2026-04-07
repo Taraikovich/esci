@@ -14,7 +14,7 @@ $csie_os_cards       = get_field('our_services_cards');
 ?>
 
 <section class="bg-white py-[60px] lg:py-[100px]">
-	<div class="max-w-[1200px] mx-auto px-[15px] lg:px-0">
+	<div class="max-w-[1200px] mx-auto px-[15px] xl:px-0">
 		<!-- Title -->
 		<?php if ($csie_os_title) : ?>
 			<h2 class="font-bold text-[25px] lg:text-[40px] leading-[1.2] uppercase text-[#353535] mb-[30px] lg:mb-[50px]">

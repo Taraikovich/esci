@@ -15,7 +15,7 @@ if (!$csie_partnership_title && !$csie_partnership_description && !$csie_partner
 }
 ?>
 
-<section class="max-w-[1200px] mx-auto px-[15px] lg:px-0 py-[25px] lg:py-[50px]">
+<section class="max-w-[1200px] mx-auto px-[15px] xl:px-0 py-[25px] lg:py-[50px]">
 	<div class="flex flex-col gap-[30px] lg:flex-row lg:items-center lg:justify-between">
 		<!-- Text -->
 		<div class="flex flex-col gap-[20px] lg:w-[430px] lg:shrink-0">

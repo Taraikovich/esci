@@ -21,7 +21,7 @@ if (!$csie_ptm_title && !$csie_ptm_desc) {
 		alt="" aria-hidden="true"
 		class="absolute inset-0 w-full h-full object-cover pointer-events-none">
 
-	<div class="relative max-w-[580px] mx-auto px-[15px] lg:px-0 flex flex-col gap-[30px] lg:gap-[40px] items-center text-center">
+	<div class="relative max-w-[580px] mx-auto px-[15px] xl:px-0 flex flex-col gap-[30px] lg:gap-[40px] items-center text-center">
 		<?php if ($csie_ptm_title) : ?>
 			<h2 class="font-bold text-[25px] lg:text-[40px] leading-[1.2] uppercase lg:whitespace-nowrap">
 				<span class="bg-gradient-to-r from-[#df4253] to-[#004f86] to-[18%] bg-clip-text text-transparent">

@@ -14,7 +14,7 @@ $csie_about_button_text = get_field('about_button_text');
 $csie_about_button_link = get_field('about_button_link');
 ?>
 
-<section class="max-w-[1200px] mx-auto px-[15px] lg:px-0 py-[40px] lg:py-[60px]">
+<section class="max-w-[1200px] mx-auto px-[15px] xl:px-0 py-[40px] lg:py-[60px]">
 	<!-- Header row: title + button -->
 	<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-[40px]">
 		<h2 class="font-bold text-[25px] lg:text-[40px] leading-[1.2] uppercase text-[#353535]">

@@ -24,7 +24,7 @@ $pattern_url          = esc_url(get_template_directory_uri() . '/assets/img/foot
 		alt="" aria-hidden="true"
 		class="absolute inset-0 w-full h-full object-cover pointer-events-none">
 
-	<div class="relative max-w-[1200px] mx-auto px-[15px] lg:px-0 py-[50px] lg:py-[100px]">
+	<div class="relative max-w-[1200px] mx-auto px-[15px] xl:px-0 py-[50px] lg:py-[100px]">
 		<!-- Header -->
 		<div class="flex flex-col gap-[15px] lg:gap-[20px] mb-[30px] lg:mb-[50px]">
 			<?php if ($csie_dyn_title) : ?>

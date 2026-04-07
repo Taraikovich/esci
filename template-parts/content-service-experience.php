@@ -16,7 +16,7 @@ if (!$csie_exp_title && !$csie_exp_cards) {
 ?>
 
 <section class="relative py-[50px] lg:py-[100px] before:content-[''] before:block before:absolute before:top-0 before:w-full before:h-[319px] before:bg-[#004f86] overflow-hidden lg:overflow-visible">
-	<div class="relative max-w-[1200px] mx-auto px-[15px] lg:px-0">
+	<div class="relative max-w-[1200px] mx-auto px-[15px] xl:px-0">
 		<!-- Title -->
 		<?php if ($csie_exp_title) : ?>
 			<div class="flex items-center justify-between mb-[30px] lg:mb-[50px]">

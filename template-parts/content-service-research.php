@@ -16,7 +16,7 @@ if (!$csie_research_title && !$csie_research_cards) {
 ?>
 
 <section class="py-[50px] lg:py-[100px] bg-white">
-	<div class="max-w-[1200px] mx-auto px-[15px] lg:px-0">
+	<div class="max-w-[1200px] mx-auto px-[15px] xl:px-0">
 		<!-- Header -->
 		<div class="flex flex-col gap-[15px] lg:gap-[20px] mb-[30px] lg:mb-[50px]">
 			<?php if ($csie_research_title) : ?>

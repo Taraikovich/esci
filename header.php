@@ -24,7 +24,7 @@
 
     <header class="sticky top-0 z-40 bg-white">
         <!-- Top bar -->
-        <div class="max-w-[1200px] mx-auto px-3.75 flex items-center justify-between py-[15px] lg:px-0 lg:pt-5 lg:pb-5">
+        <div class="max-w-[1200px] mx-auto px-3.75 flex items-center justify-between py-[15px] xl:px-0 lg:pt-5 lg:pb-5">
             <!-- Logo -->
             <a href="<?php echo esc_url(home_url('/')); ?>" class="shrink-0">
                 <img
@@ -96,8 +96,8 @@
 
         <!-- Desktop: Secondary Menu (blue bar) -->
         <?php if (has_nav_menu('secondary')) : ?>
-            <nav class="hidden lg:block bg-[#004f86] w-full">
-                <div class="max-w-[1200px] mx-auto py-3.75 lg:px-0 flex items-center justify-between">
+            <nav class="hidden lg:block bg-[#004f86] w-full px-[15px] xl:px-0">
+                <div class="max-w-[1200px] mx-auto py-3.75 xl:px-0 flex items-center justify-between">
                     <?php
                     wp_nav_menu([
                         'theme_location' => 'secondary',

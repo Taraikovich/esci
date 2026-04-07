@@ -22,7 +22,7 @@ if (!$csie_spec_title && !$csie_spec_text && !$csie_spec_image) {
 		alt="" aria-hidden="true"
 		class="absolute inset-0 w-full h-full object-cover pointer-events-none">
 
-	<div class="relative max-w-[1200px] mx-auto px-[15px] lg:px-0 py-[50px] lg:py-[100px]">
+	<div class="relative max-w-[1200px] mx-auto px-[15px] xl:px-0 py-[50px] lg:py-[100px]">
 		<div class="flex flex-col gap-[30px] lg:flex-row lg:gap-[100px]">
 			<!-- Text -->
 			<div class="flex flex-col gap-[20px] text-white lg:w-[430px] lg:shrink-0">

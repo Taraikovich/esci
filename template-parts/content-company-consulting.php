@@ -17,7 +17,7 @@ $csie_cons_button_link = get_field('consulting_button_link');
 ?>
 
 <section class="bg-[#f8f8f8] py-[50px] lg:py-[100px]">
-	<div class="max-w-[1200px] mx-auto px-[15px] lg:px-0">
+	<div class="max-w-[1200px] mx-auto px-[15px] xl:px-0">
 		<!-- Title -->
 		<?php if ($csie_cons_title) : ?>
 			<h2 class="bg-gradient-to-r from-[#df4253] to-[#004f86] to-[18%] bg-clip-text text-transparent font-bold text-[25px] lg:text-[40px] leading-[1.2] uppercase mb-[30px] lg:mb-[50px]">
@@ -34,7 +34,7 @@ $csie_cons_button_link = get_field('consulting_button_link');
 			<?php endif; ?>
 
 			<!-- Image + List + Right text -->
-			<div class="flex flex-col lg:flex-row gap-[30px] lg:gap-[40px]">
+			<div class="flex flex-col xl:flex-row gap-[30px] lg:gap-[40px]">
 				<?php if ($csie_cons_image) : ?>
 					<div class="w-full lg:w-[506px] h-[150px] lg:h-[234px] shrink-0 overflow-hidden">
 						<img

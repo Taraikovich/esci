@@ -15,7 +15,7 @@ $csie_ancestors  = get_post_ancestors($csie_current_id);
 $csie_depth      = count($csie_ancestors);
 
 if ($csie_depth >= 2) {
-	$csie_root_id      = $csie_ancestors[ $csie_depth - 1 ];
+	$csie_root_id      = $csie_ancestors[$csie_depth - 1];
 	$csie_active_tab   = $csie_ancestors[0];
 	$csie_active_pill  = $csie_current_id;
 	$csie_pills_parent = $csie_ancestors[0];
@@ -38,7 +38,7 @@ if (! empty($csie_menu_locations['primary'])) {
 	$csie_menu_items = wp_get_nav_menu_items($csie_menu_locations['primary']);
 	if (is_array($csie_menu_items)) {
 		foreach ($csie_menu_items as $csie_item) {
-			$csie_menu_order_map[ (int) $csie_item->object_id ] = $csie_item->menu_order;
+			$csie_menu_order_map[(int) $csie_item->object_id] = $csie_item->menu_order;
 		}
 	}
 }
@@ -56,8 +56,8 @@ if (empty($csie_tabs)) {
 }
 
 usort($csie_tabs, function ($a, $b) use ($csie_menu_order_map) {
-	$csie_oa = isset($csie_menu_order_map[ $a->ID ]) ? $csie_menu_order_map[ $a->ID ] : PHP_INT_MAX;
-	$csie_ob = isset($csie_menu_order_map[ $b->ID ]) ? $csie_menu_order_map[ $b->ID ] : PHP_INT_MAX;
+	$csie_oa = isset($csie_menu_order_map[$a->ID]) ? $csie_menu_order_map[$a->ID] : PHP_INT_MAX;
+	$csie_ob = isset($csie_menu_order_map[$b->ID]) ? $csie_menu_order_map[$b->ID] : PHP_INT_MAX;
 	return $csie_oa - $csie_ob;
 });
 
@@ -71,15 +71,15 @@ if ($csie_pills_parent) {
 		'post_status' => 'publish',
 	));
 	usort($csie_pills, function ($a, $b) use ($csie_menu_order_map) {
-		$csie_oa = isset($csie_menu_order_map[ $a->ID ]) ? $csie_menu_order_map[ $a->ID ] : PHP_INT_MAX;
-		$csie_ob = isset($csie_menu_order_map[ $b->ID ]) ? $csie_menu_order_map[ $b->ID ] : PHP_INT_MAX;
+		$csie_oa = isset($csie_menu_order_map[$a->ID]) ? $csie_menu_order_map[$a->ID] : PHP_INT_MAX;
+		$csie_ob = isset($csie_menu_order_map[$b->ID]) ? $csie_menu_order_map[$b->ID] : PHP_INT_MAX;
 		return $csie_oa - $csie_ob;
 	});
 }
 ?>
 
 <nav class="bg-white" aria-label="<?php esc_attr_e('Service navigation', 'csie'); ?>">
-	<div class="max-w-[1200px] mx-auto px-[15px] lg:px-0">
+	<div class="max-w-[1200px] mx-auto px-[15px] xl:px-0">
 		<!-- Tabs -->
 		<div class="overflow-x-auto scrollbar-hide">
 			<ul class="flex gap-[10px] lg:gap-[30px] pt-[30px] border-b border-[#e5e5e5] min-w-max">
@@ -88,7 +88,7 @@ if ($csie_pills_parent) {
 				?>
 					<li>
 						<a href="<?php echo esc_url(get_permalink($csie_tab->ID)); ?>"
-						   class="block pb-[15px] text-[14px] font-bold leading-[1.2] uppercase whitespace-nowrap transition-colors <?php echo $csie_is_active ? 'text-[#353535] border-b-[3px] border-[#00b1ff]' : 'text-[#353535] hover:text-[#00b1ff]'; ?>">
+							class="block pb-[15px] text-[14px] font-bold leading-[1.2] uppercase whitespace-nowrap transition-colors <?php echo $csie_is_active ? 'text-[#353535] border-b-[3px] border-[#00b1ff]' : 'text-[#353535] hover:text-[#00b1ff]'; ?>">
 							<?php echo esc_html($csie_tab->post_title); ?>
 						</a>
 					</li>
@@ -104,7 +104,7 @@ if ($csie_pills_parent) {
 						$csie_pill_active = ($csie_pill->ID === $csie_active_pill);
 					?>
 						<a href="<?php echo esc_url(get_permalink($csie_pill->ID)); ?>"
-						   class="rounded-full px-[32px] py-[15px] text-[12px] font-medium leading-[1.2] whitespace-nowrap transition-colors <?php echo $csie_pill_active ? 'bg-[#353535] text-white' : 'bg-[#f8f8f8] text-[#353535] hover:bg-[#efefef]'; ?>">
+							class="rounded-full px-[32px] py-[15px] text-[12px] font-medium leading-[1.2] whitespace-nowrap transition-colors <?php echo $csie_pill_active ? 'bg-[#353535] text-white' : 'bg-[#f8f8f8] text-[#353535] hover:bg-[#efefef]'; ?>">
 							<?php echo esc_html($csie_pill->post_title); ?>
 						</a>
 					<?php endforeach; ?>

@@ -13,7 +13,7 @@ $csie_hero_image = get_field('service_hero_image');
 
 <section class="flex flex-col items-center py-[25px] lg:py-[50px]">
 	<!-- Text block -->
-	<div class="px-[15px] lg:px-0 max-w-[1200px] mx-auto w-full">
+	<div class="px-[15px] xl:px-0 max-w-[1200px] mx-auto w-full">
 		<h1 class="bg-gradient-to-r from-[#df4253] to-[#004f86] to-[65%] bg-clip-text text-transparent font-bold text-[27px] lg:text-[55px] leading-[1.2] uppercase text-center lg:text-left">
 			<?php echo esc_html($csie_service_title); ?>
 

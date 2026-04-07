@@ -18,7 +18,7 @@ $csie_wd_button_link = get_field('webdev_button_link');
 ?>
 
 <section class="py-[50px] lg:py-[100px]">
-	<div class="max-w-[1200px] mx-auto px-[15px] lg:px-0">
+	<div class="max-w-[1200px] mx-auto px-[15px] xl:px-0">
 		<!-- Title -->
 		<?php if ($csie_wd_title) : ?>
 			<h2 class="bg-gradient-to-r from-[#df4253] to-[#004f86] to-[18%] bg-clip-text text-transparent font-bold text-[25px] lg:text-[40px] leading-[1.2] uppercase mb-[15px] lg:mb-[50px]">
@@ -69,7 +69,7 @@ $csie_wd_button_link = get_field('webdev_button_link');
 					</div>
 				<?php endif; ?>
 
-				<div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-[30px]">
+				<div class="flex flex-col xl:flex-row lg:items-end lg:justify-between gap-[30px]">
 					<?php if ($csie_wd_footer_text) : ?>
 						<p class="text-[14px] lg:text-[16px] leading-[1.2] text-[#606060] lg:w-[265px]">
 							<?php echo esc_html($csie_wd_footer_text); ?>

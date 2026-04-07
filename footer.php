@@ -9,7 +9,7 @@
 
 <footer class="flex flex-col items-center gap-5 pb-5">
     <!-- Blue footer section -->
-    <div class="relative w-full bg-[#004f86] overflow-hidden">
+    <div class="relative w-full bg-[#004f86] overflow-hidden px-[15px] xl:px-0">
         <!-- Pattern overlay -->
         <div class="absolute inset-0 pointer-events-none">
             <img
@@ -19,7 +19,7 @@
         </div>
 
         <!-- Footer content -->
-        <div class="relative max-w-[1200px] mx-auto px-3.75 lg:px-0 py-[70px] lg:py-[100px]">
+        <div class="relative max-w-[1200px] mx-auto px-3.75 xl:px-0 py-[70px] lg:py-[100px]">
             <!-- Logo + Button row -->
             <div class="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-between">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
