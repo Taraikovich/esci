@@ -10,7 +10,7 @@ $csie_spec_title = get_field('specialization_title');
 $csie_spec_text = get_field('specialization_text');
 $csie_spec_image = get_field('specialization_image');
 
-if (!$csie_spec_title && !$csie_spec_text && !$csie_spec_image) {
+if (!$csie_spec_title) {
 	return;
 }
 ?>

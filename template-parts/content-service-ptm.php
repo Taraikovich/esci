@@ -9,7 +9,7 @@
 $csie_ptm_title = get_field('ptm_title');
 $csie_ptm_desc = get_field('ptm_description');
 
-if (!$csie_ptm_title && !$csie_ptm_desc) {
+if (!$csie_ptm_title) {
 	return;
 }
 ?>

@@ -55,12 +55,23 @@
                     </svg>
                 </button>
 
-                <!-- Language switcher -->
-                <div class="flex items-center gap-[5px] lg:gap-[7px] text-base leading-[1.2]">
-                    <a href="#" class="font-bold text-[#004f86]">EN</a>
-                    <span class="text-[#353535]">|</span>
-                    <a href="#" class="text-[#353535] hover:text-[#004f86] transition-colors">DE</a>
-                </div>
+                <!-- Language switcher (Polylang) -->
+                <?php if (function_exists('pll_the_languages')) : ?>
+                    <div class="flex items-center gap-[5px] lg:gap-[7px] text-base leading-[1.2]">
+                        <?php
+                        $languages = pll_the_languages(array('raw' => 1));
+                        $links = array();
+                        foreach ($languages as $lang) {
+                            if ($lang['current_lang']) {
+                                $links[] = '<a href="' . esc_url($lang['url']) . '" class="font-bold text-[#004f86]">' . esc_html(strtoupper($lang['slug'])) . '</a>';
+                            } else {
+                                $links[] = '<a href="' . esc_url($lang['url']) . '" class="text-[#353535] hover:text-[#004f86] transition-colors">' . esc_html(strtoupper($lang['slug'])) . '</a>';
+                            }
+                        }
+                        echo implode('<span class="text-[#353535]">|</span>', $links);
+                        ?>
+                    </div>
+                <?php endif; ?>
             </div>
 
             <!-- Mobile: Menu button -->

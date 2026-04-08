@@ -10,7 +10,7 @@ $csie_partnership_title = get_field('partnership_title');
 $csie_partnership_description = get_field('partnership_description');
 $csie_partnership_image = get_field('partnership_image');
 
-if (!$csie_partnership_title && !$csie_partnership_description && !$csie_partnership_image) {
+if (!$csie_partnership_title) {
 	return;
 }
 ?>

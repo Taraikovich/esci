@@ -11,7 +11,7 @@ $csie_sol_title = get_field('solutions_title');
 $csie_sol_desc = get_field('solutions_description');
 $csie_sol_cards = get_field('solutions_cards');
 
-if (!$csie_sol_title && !$csie_sol_cards) {
+if (!$csie_sol_title) {
 	return;
 }
 ?>

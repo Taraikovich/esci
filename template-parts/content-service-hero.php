@@ -9,6 +9,10 @@
 $csie_service_title = get_field('service_title');
 $csie_service_description = get_field('service_description');
 $csie_hero_image = get_field('service_hero_image');
+
+if (!$csie_service_title) {
+	return;
+}
 ?>
 
 <section class="flex flex-col items-center py-[25px] lg:py-[50px]">

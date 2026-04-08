@@ -10,7 +10,7 @@ $csie_uniq_title = get_field('uniqueness_title');
 $csie_uniq_desc = get_field('uniqueness_description');
 $csie_uniq_cards = get_field('uniqueness_cards');
 
-if (!$csie_uniq_title && !$csie_uniq_cards) {
+if (!$csie_uniq_title) {
 	return;
 }
 ?>

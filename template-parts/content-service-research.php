@@ -10,7 +10,7 @@ $csie_research_title = get_field('research_title');
 $csie_research_desc = get_field('research_description');
 $csie_research_cards = get_field('research_cards');
 
-if (!$csie_research_title && !$csie_research_cards) {
+if (!$csie_research_title) {
 	return;
 }
 ?>

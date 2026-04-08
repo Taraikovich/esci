@@ -10,7 +10,7 @@
 $csie_exp_title = get_field('experience_title');
 $csie_exp_cards = get_field('experience_cards');
 
-if (!$csie_exp_title && !$csie_exp_cards) {
+if (!$csie_exp_title) {
 	return;
 }
 ?>
