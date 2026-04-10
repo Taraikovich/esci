@@ -42,11 +42,11 @@ if (!$csie_sol_title) {
 		<!-- Cards Swiper -->
 		<?php if ($csie_sol_cards) : ?>
 			<div class="swiper csie-solutions-swiper relative" style="overflow: visible;">
-				<div class="swiper-wrapper">
+				<div class="swiper-wrapper items-stretch">
 					<?php foreach ($csie_sol_cards as $csie_index => $csie_card) : ?>
-						<div class="swiper-slide">
-							<div class="group drop-shadow-[0_0_2px_rgba(0,0,0,0.3)]">
-								<div class="<?php echo 0 === $csie_index % 2 ? 'bg-[#fff]' : 'bg-[#f8f8f8]'; ?> min-h-[340px] pt-[80px] px-[40px] pb-[30px] flex flex-col justify-between"
+						<div class="swiper-slide !h-auto">
+							<div class="group drop-shadow-[0_0_2px_rgba(0,0,0,0.3)] transition-all duration-500 hover:z-10 hover:-translate-x-[20px] h-full">
+								<div class="<?php echo 0 === $csie_index % 2 ? 'bg-[#fff]' : 'bg-[#f8f8f8]'; ?> h-full pt-[80px] px-[40px] pb-[30px] flex flex-col justify-between"
 									style="clip-path: polygon(125px 0%, 155px 40px, 100% 40px, 100% 100%, 0 100%, 0% 0%);">
 									<div>
 										<h3 class="text-[20px] lg:text-[24px] font-bold uppercase leading-[1.2] text-[#353535] group-hover:text-[#00b1ff] transition-colors duration-300 mb-[20px]">

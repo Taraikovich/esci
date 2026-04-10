@@ -6,62 +6,72 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('bg-white rounded-lg shadow-sm p-6 lg:p-8'); ?>>
-    <?php
-    $csie_categories = get_the_category();
-    if ($csie_categories) : ?>
-        <div class="mb-3">
-            <?php foreach ($csie_categories as $csie_cat) : ?>
-                <a href="<?php echo esc_url(get_category_link($csie_cat->term_id)); ?>" class="text-xs font-medium text-blue-600 hover:text-blue-800 uppercase tracking-wide mr-2">
-                    <?php echo esc_html($csie_cat->name); ?>
-                </a>
-            <?php endforeach; ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <section class="py-[25px] lg:py-[50px]">
+        <div class="max-w-[1200px] mx-auto px-[15px] xl:px-0">
+            <?php
+            $csie_categories = get_the_category();
+            if ($csie_categories) : ?>
+                <div class="mb-[15px] flex flex-wrap gap-[10px]">
+                    <?php foreach ($csie_categories as $csie_cat) : ?>
+                        <a href="<?php echo esc_url(get_category_link($csie_cat->term_id)); ?>" class="text-[12px] font-medium text-[#004f86] hover:text-[#00b1ff] uppercase tracking-wide transition-colors">
+                            <?php echo esc_html($csie_cat->name); ?>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+
+            <h1 class="bg-gradient-to-r from-[#df4253] to-[#004f86] to-[65%] bg-clip-text text-transparent font-bold text-[27px] lg:text-[55px] leading-[1.2] uppercase">
+                <?php the_title(); ?>
+            </h1>
+
+            <div class="flex flex-wrap items-center gap-[8px] text-[13px] text-[#888] mt-[15px]">
+                <span><?php echo esc_html(get_the_author()); ?></span>
+                <span>&middot;</span>
+                <time datetime="<?php echo esc_attr(get_the_date('c')); ?>"><?php echo esc_html(get_the_date()); ?></time>
+                <?php if (! post_password_required() && comments_open()) : ?>
+                    <span>&middot;</span>
+                    <?php comments_popup_link(
+                        __('0 Comments', 'csie'),
+                        __('1 Comment', 'csie'),
+                        __('% Comments', 'csie'),
+                        'hover:text-[#004f86] transition-colors'
+                    ); ?>
+                <?php endif; ?>
+            </div>
         </div>
-    <?php endif; ?>
 
-    <h1 class="text-3xl font-bold mb-4"><?php the_title(); ?></h1>
-
-    <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
-        <span><?php echo esc_html(get_the_author()); ?></span>
-        <span>&middot;</span>
-        <time datetime="<?php echo esc_attr(get_the_date('c')); ?>"><?php echo esc_html(get_the_date()); ?></time>
-        <?php if (! post_password_required() && comments_open()) : ?>
-            <span>&middot;</span>
-            <?php comments_popup_link(
-                __('0 Comments', 'csie'),
-                __('1 Comment', 'csie'),
-                __('% Comments', 'csie'),
-                'text-gray-500 hover:text-blue-600'
-            ); ?>
+        <?php if (has_post_thumbnail()) : ?>
+            <div class="w-full h-[400px] lg:h-[480px] mt-[30px] lg:mt-[40px] overflow-hidden">
+                <?php the_post_thumbnail('full', ['class' => 'w-full h-full object-cover']); ?>
+            </div>
         <?php endif; ?>
-    </div>
+    </section>
 
-    <?php if (has_post_thumbnail()) : ?>
-        <div class="mb-6">
-            <?php the_post_thumbnail('full', ['class' => 'w-full rounded-md']); ?>
+    <section class="pb-[50px] lg:pb-[80px]">
+        <div class="max-w-[1200px] mx-auto px-[15px] xl:px-0">
+            <div class="max-w-none text-[#353535] text-[14px] lg:text-[16px] leading-[1.6] [&>p]:mb-4 [&>h2]:text-[20px] [&>h2]:lg:text-[28px] [&>h2]:font-bold [&>h2]:text-[#004f86] [&>h2]:mt-8 [&>h2]:mb-4 [&>h3]:text-[18px] [&>h3]:lg:text-[22px] [&>h3]:font-semibold [&>h3]:text-[#004f86] [&>h3]:mt-6 [&>h3]:mb-3 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-4 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-4 [&>blockquote]:border-l-4 [&>blockquote]:border-[#004f86] [&>blockquote]:pl-4 [&>blockquote]:italic [&>blockquote]:text-[#353535] [&>blockquote]:my-4 [&>pre]:bg-gray-100 [&>pre]:rounded-md [&>pre]:p-4 [&>pre]:overflow-x-auto [&>pre]:mb-4 [&>img]:rounded-md [&>img]:my-4">
+                <?php the_content(); ?>
+            </div>
+
+            <?php
+            wp_link_pages([
+                'before' => '<div class="mt-6 flex items-center gap-2 text-sm">' . __('Pages:', 'csie'),
+                'after'  => '</div>',
+            ]);
+            ?>
+
+            <?php
+            $csie_tags = get_the_tags();
+            if ($csie_tags) : ?>
+                <div class="mt-[25px] pt-[25px] border-t border-[#e5e5e5] flex flex-wrap gap-[8px]">
+                    <?php foreach ($csie_tags as $csie_tag) : ?>
+                        <a href="<?php echo esc_url(get_tag_link($csie_tag->term_id)); ?>" class="inline-block bg-[#f5f5f5] text-[#353535] text-[13px] px-[12px] py-[5px] rounded-full hover:bg-[#004f86] hover:text-white transition-colors">
+                            #<?php echo esc_html($csie_tag->name); ?>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
         </div>
-    <?php endif; ?>
-
-    <div class="max-w-none [&>p]:mb-4 [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:mt-8 [&>h2]:mb-4 [&>h3]:text-xl [&>h3]:font-semibold [&>h3]:mt-6 [&>h3]:mb-3 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-4 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-4 [&>blockquote]:border-l-4 [&>blockquote]:border-gray-300 [&>blockquote]:pl-4 [&>blockquote]:italic [&>blockquote]:text-gray-600 [&>blockquote]:my-4 [&>pre]:bg-gray-100 [&>pre]:rounded-md [&>pre]:p-4 [&>pre]:overflow-x-auto [&>pre]:mb-4 [&>img]:rounded-md [&>img]:my-4">
-        <?php the_content(); ?>
-    </div>
-
-    <?php
-    wp_link_pages([
-        'before' => '<div class="mt-6 flex items-center gap-2 text-sm">' . __('Pages:', 'csie'),
-        'after'  => '</div>',
-    ]);
-    ?>
-
-    <?php
-    $csie_tags = get_the_tags();
-    if ($csie_tags) : ?>
-        <div class="mt-6 pt-6 border-t border-gray-200 flex flex-wrap gap-2">
-            <?php foreach ($csie_tags as $csie_tag) : ?>
-                <a href="<?php echo esc_url(get_tag_link($csie_tag->term_id)); ?>" class="inline-block bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full hover:bg-gray-200 transition-colors">
-                    #<?php echo esc_html($csie_tag->name); ?>
-                </a>
-            <?php endforeach; ?>
-        </div>
-    <?php endif; ?>
+    </section>
 </article>

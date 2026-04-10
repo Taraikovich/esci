@@ -43,8 +43,8 @@ if (! $csie_expertise_cards) {
 
                                 <?php if ($csie_card['card_image']) : ?>
                                     <div class="relative w-[65px] h-[55px] shrink-0">
-                                        <div class="absolute left-0 top-0 size-[27px] bg-[#00b1ff]"></div>
-                                        <div class="absolute right-0 bottom-0 size-[27px] bg-[#004f86]"></div>
+                                        <div class="absolute left-0 top-0 size-[27px] bg-[#00b1ff] transition-colors duration-500 group-hover:bg-[#004f86]"></div>
+                                        <div class="absolute right-0 bottom-0 size-[27px] bg-[#004f86] transition-colors duration-500 group-hover:bg-[#00b1ff]"></div>
                                         <img
                                             src="<?php echo esc_url($csie_card['card_image']['url']); ?>"
                                             alt="<?php echo esc_attr($csie_card['card_image']['alt']); ?>"

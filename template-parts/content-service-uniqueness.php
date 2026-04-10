@@ -45,7 +45,7 @@ if (!$csie_uniq_title) {
 			<div class="swiper csie-uniqueness-swiper">
 				<div class="swiper-wrapper">
 					<?php foreach ($csie_uniq_cards as $csie_card) : ?>
-						<div class="swiper-slide lg:!h-[357px]">
+						<div class="swiper-slide !h-auto">
 							<div class="group bg-[#f8f8f8] flex flex-col gap-[20px] p-[25px] lg:p-[30px] h-full">
 								<!-- Card header -->
 								<div class="flex items-center justify-between">
@@ -55,8 +55,8 @@ if (!$csie_uniq_title) {
 
 									<?php if ($csie_card['card_image']) : ?>
 										<div class="relative w-[70px] h-[60px] lg:w-[125px] lg:h-[106px] shrink-0">
-											<div class="absolute left-0 top-0 size-[29px] lg:size-[52px] bg-[#00b1ff]"></div>
-											<div class="absolute right-0 bottom-0 size-[29px] lg:size-[52px] bg-[#004f86]"></div>
+											<div class="absolute left-0 top-0 size-[29px] lg:size-[52px] bg-[#00b1ff] transition-colors duration-500 group-hover:bg-[#004f86]"></div>
+											<div class="absolute right-0 bottom-0 size-[29px] lg:size-[52px] bg-[#004f86] transition-colors duration-500 group-hover:bg-[#00b1ff]"></div>
 											<img
 												src="<?php echo esc_url($csie_card['card_image']['url']); ?>"
 												alt="<?php echo esc_attr($csie_card['card_image']['alt']); ?>"

@@ -130,6 +130,18 @@ add_action('widgets_init', 'csie_widgets_init');
  */
 class Csie_Footer_Walker extends Walker_Nav_Menu
 {
+    private $col_index = 0;
+
+    public function walk($elements, $max_depth, ...$args)
+    {
+        $this->col_index = 0;
+        $output = parent::walk($elements, $max_depth, ...$args);
+        if ($this->col_index > 2) {
+            $output .= '</div>';
+        }
+        return $output;
+    }
+
     public function start_lvl(&$output, $depth = 0, $args = null)
     {
         if ($depth === 0) {
@@ -140,15 +152,20 @@ class Csie_Footer_Walker extends Walker_Nav_Menu
     public function end_lvl(&$output, $depth = 0, $args = null)
     {
         if ($depth === 0) {
-            $output .= '</div></div>';
+            $output .= '</div>';
         }
     }
 
     public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
     {
         if ($depth === 0) {
-            $output .= '<div class="flex flex-col gap-[15px] lg:gap-5 lg:max-w-52 items-center lg:items-start">';
+            if ($this->col_index < 2) {
+                $output .= '<div class="flex flex-col gap-[15px] lg:gap-5 lg:max-w-52 items-center lg:items-start">';
+            } elseif ($this->col_index === 2) {
+                $output .= '<div class="flex flex-col gap-[15px] lg:gap-5 lg:max-w-52 items-center lg:items-start">';
+            }
             $output .= '<h3 class="text-[20px] font-bold uppercase text-center lg:text-left">' . esc_html($item->title) . '</h3>';
+            $this->col_index++;
         } else {
             $atts = [];
             $atts['href'] = ! empty($item->url) ? $item->url : '';
@@ -167,7 +184,9 @@ class Csie_Footer_Walker extends Walker_Nav_Menu
 
     public function end_el(&$output, $item, $depth = 0, $args = null)
     {
-        // Column closing is handled in end_lvl for top-level items
+        if ($depth === 0 && $this->col_index <= 2) {
+            $output .= '</div>';
+        }
     }
 }
 

@@ -82,7 +82,7 @@ if ($csie_pills_parent) {
 	<div class="max-w-[1200px] mx-auto px-[15px] xl:px-0">
 		<!-- Tabs -->
 		<div class="overflow-x-auto scrollbar-hide">
-			<ul class="flex gap-[10px] lg:gap-[30px] pt-[30px] border-b border-[#e5e5e5] min-w-max">
+			<ul class="flex gap-[10px] lg:gap-[30px] pt-[30px] border-b border-[#e5e5e5] min-w-max lg:min-w-0 lg:flex-wrap">
 				<?php foreach ($csie_tabs as $csie_tab) :
 					$csie_is_active = ($csie_tab->ID === $csie_active_tab);
 				?>

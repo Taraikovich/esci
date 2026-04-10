@@ -9,7 +9,7 @@
 $csie_breadcrumb_ancestors = array_reverse(get_post_ancestors(get_the_ID()));
 ?>
 
-<nav class="flex items-center gap-[10px]" aria-label="<?php esc_attr_e('Breadcrumbs', 'csie'); ?>">
+<nav class="flex flex-wrap items-center gap-[10px]" aria-label="<?php esc_attr_e('Breadcrumbs', 'csie'); ?>">
 	<a href="<?php echo esc_url(home_url('/')); ?>" class="text-[16px] font-normal leading-[1.2] text-[#353535] whitespace-nowrap hover:text-[#00b1ff] transition-colors">
 		<?php esc_html_e('Home', 'csie'); ?>
 	</a>

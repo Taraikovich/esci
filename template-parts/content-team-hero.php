@@ -24,7 +24,7 @@ $csie_team_hero_image = get_field('team_hero_image');
 			<img
 				src="<?php echo esc_url($csie_team_hero_image['url']); ?>"
 				alt="<?php echo esc_attr($csie_team_hero_image['alt']); ?>"
-				class="w-full h-full object-cover">
+				class="w-full h-full object-cover object-bottom">
 		</div>
 	<?php endif; ?>
 </section>

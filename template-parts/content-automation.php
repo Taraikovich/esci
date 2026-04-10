@@ -51,11 +51,11 @@ if (! $automation_cards) {
             <?php endif; ?>
         </div>
         <div class="swiper csie-automation" style="overflow: visible;">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper items-stretch">
                 <?php foreach ($automation_cards as $csie_index => $csie_card) : ?>
-                    <div class="swiper-slide">
-                        <div class="drop-shadow-[0_0_2px_rgba(0,0,0,0.3)]">
-                            <div class="tag min-h-[340px] <?php echo 0 === $csie_index % 2 ? 'bg-[#FFF]' : 'bg-[#F8F8F8]'; ?> pt-20 px-10 pb-10"
+                    <div class="swiper-slide !h-auto">
+                        <div class="drop-shadow-[0_0_2px_rgba(0,0,0,0.3)] h-full">
+                            <div class="tag h-full <?php echo 0 === $csie_index % 2 ? 'bg-[#FFF]' : 'bg-[#F8F8F8]'; ?> pt-20 px-10 pb-10"
                                 style="clip-path: polygon(125px 0%, 155px 40px, 100% 40px, 100% 100%, 0 100%, 0% 0%, 0 0)">
                                 <h4 class="text-[24px] font-bold uppercase leading-[1.2] text-[#353535] mb-[20px]"><?php echo esc_html($csie_card['card_title']); ?></h4>
                                 <p class="text-base leading-[1.2] text-[#606060]"><?php echo esc_html($csie_card['card_text']); ?></p>

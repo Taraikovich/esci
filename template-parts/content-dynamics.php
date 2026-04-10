@@ -41,8 +41,8 @@ if (! $cards) {
                             <?php echo esc_html($card['card_title']); ?>
                         </h3>
                         <div class="relative w-[70px] h-[60px] lg:w-[125px] lg:h-[106px] shrink-0">
-                            <div class="absolute left-0 top-0 size-[29px] lg:size-[52px] bg-[#00b1ff]"></div>
-                            <div class="absolute right-0 bottom-0 size-[29px] lg:size-[52px] bg-[#004f86]"></div>
+                            <div class="absolute left-0 top-0 size-[29px] lg:size-[52px] bg-[#00b1ff] transition-colors duration-500 group-hover:bg-[#004f86]"></div>
+                            <div class="absolute right-0 bottom-0 size-[29px] lg:size-[52px] bg-[#004f86] transition-colors duration-500 group-hover:bg-[#00b1ff]"></div>
                             <?php if ($image) : ?>
                                 <img
                                     src="<?php echo esc_url($image['url']); ?>"

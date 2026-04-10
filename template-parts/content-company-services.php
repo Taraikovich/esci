@@ -14,7 +14,7 @@ $csie_os_cards       = get_field('our_services_cards');
 ?>
 
 <section class="bg-white py-[60px] lg:py-[100px]">
-	<div class="max-w-[1200px] mx-auto px-[15px] xl:px-0">
+	<div class="max-w-[1200px] mx-auto px-[15px] xl:px-0 overflow-hidden">
 		<!-- Title -->
 		<?php if ($csie_os_title) : ?>
 			<h2 class="font-bold text-[25px] lg:text-[40px] leading-[1.2] uppercase text-[#353535] mb-[30px] lg:mb-[50px]">
@@ -55,9 +55,9 @@ $csie_os_cards       = get_field('our_services_cards');
 				<div class="hidden lg:grid lg:grid-cols-3">
 					<?php foreach ($csie_os_cards as $i => $card) :
 						$bg_color    = $card['card_bg_color'] ?: '#ffffff';
-						$shadow      = ($bg_color === '#ffffff' || $bg_color === '#fff') ? 'shadow-[0_0_10px_0_rgba(0,0,0,0.03)]' : '';
+						$shadow      = ($bg_color === '#ffffff' || $bg_color === '#fff') ? 'shadow-[0_0_10px_0_rgba(0,0,0,0.1)]' : '';
 					?>
-						<div class="group flex flex-col gap-[15px] p-[25px] lg:p-[30px] min-h-[150px] <?php echo esc_attr($shadow); ?>" style="background-color: <?php echo esc_attr($bg_color); ?>">
+						<div class="group flex flex-col gap-[15px] p-[25px] lg:p-[30px] min-h-[150px] <?php echo esc_attr($shadow); ?> transition-shadow duration-300 hover:shadow-[0_0_20px_0_rgba(0,0,0,0.15)] hover:z-10 relative" style="background-color: <?php echo esc_attr($bg_color); ?>">
 							<h3 class="text-[18px] font-bold uppercase leading-[1.2] transition-colors group-hover:text-[#00b1ff]">
 								<?php echo esc_html($card['card_title']); ?>
 							</h3>
@@ -70,7 +70,7 @@ $csie_os_cards       = get_field('our_services_cards');
 
 				<!-- Mobile: Swiper with 3 cards per column per slide -->
 				<div class="lg:hidden">
-					<div class="swiper csie-services-grid-swiper">
+					<div class="swiper csie-services-grid-swiper" style="overflow: visible;">
 						<div class="swiper-wrapper">
 							<?php
 							$chunks = array_chunk($csie_os_cards, 3);
@@ -81,7 +81,7 @@ $csie_os_cards       = get_field('our_services_cards');
 										<?php foreach ($chunk as $card) :
 											$bg_color    = $card['card_bg_color'] ?: '#ffffff';
 											$title_color = $card['card_title_color'] ?: '#353535';
-											$shadow      = ($bg_color === '#ffffff' || $bg_color === '#fff') ? 'shadow-[0_0_10px_0_rgba(0,0,0,0.03)]' : '';
+											$shadow      = ($bg_color === '#ffffff' || $bg_color === '#fff') ? 'shadow-[0_0_10px_0_rgba(0,0,0,0.1)]' : '';
 										?>
 											<div class="group flex flex-col gap-[15px] p-[25px] min-h-[150px] <?php echo esc_attr($shadow); ?>" style="background-color: <?php echo esc_attr($bg_color); ?>">
 												<h3 class="text-[18px] font-bold uppercase leading-[1.2] transition-colors group-hover:!text-[#00b1ff]" style="color: <?php echo esc_attr($title_color); ?>">
