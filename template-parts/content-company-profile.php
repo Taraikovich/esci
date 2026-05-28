@@ -37,7 +37,7 @@ $pattern_url = esc_url(get_template_directory_uri() . '/assets/img/services-patt
                     $card_image = $card['card_image'] ?? null;
                 ?>
                     <div class="swiper-slide">
-                        <div class="group relative overflow-hidden p-[25px] lg:p-[30px] h-[400px] lg:h-[460px]" style="background-color: <?php echo esc_attr($bg_color); ?>">
+                        <div class="group relative overflow-hidden p-[25px] lg:p-[30px] h-[535px]" style="background-color: <?php echo esc_attr($bg_color); ?>">
                             <!-- Text content -->
                             <div class="relative z-10 flex flex-col gap-[15px] lg:gap-[20px]">
                                 <h3 class="text-[20px] lg:text-[24px] font-bold uppercase leading-[1.2]" style="color: <?php echo esc_attr($text_color); ?>">

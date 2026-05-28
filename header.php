@@ -89,16 +89,27 @@
         <div id="csie-search-panel" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out border-t border-gray-100 bg-white">
             <div class="overflow-hidden">
                 <div class="max-w-[1200px] mx-auto px-4 md:px-[15px] py-4">
-                    <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>" class="flex gap-3">
+                    <?php
+                    $csie_lang = function_exists('pll_current_language') ? pll_current_language() : '';
+                    $csie_search_labels = [
+                        'de' => ['placeholder' => 'Suche...', 'button' => 'Suche'],
+                        'ru' => ['placeholder' => 'Поиск...', 'button' => 'Поиск'],
+                    ];
+                    $csie_search_text = $csie_search_labels[$csie_lang] ?? ['placeholder' => __('Search...', 'csie'), 'button' => __('Search', 'csie')];
+                    ?>
+                    <form role="search" method="get" action="/" class="flex gap-3">
                         <input
                             type="search"
                             name="s"
                             id="csie-search-input"
-                            placeholder="<?php esc_attr_e('Search...', 'csie'); ?>"
+                            placeholder="<?php echo esc_attr($csie_search_text['placeholder']); ?>"
                             value="<?php echo get_search_query(); ?>"
                             class="flex-1 border border-gray-300 rounded-lg px-4 py-2 text-base focus:outline-none focus:ring-2 focus:ring-[#004f86] focus:border-[#004f86] transition">
+                        <?php if ($csie_lang) : ?>
+                            <input type="hidden" name="lang" value="<?php echo esc_attr($csie_lang); ?>">
+                        <?php endif; ?>
                         <button type="submit" class="bg-[#004f86] text-white px-6 py-2 rounded-lg hover:bg-[#003a63] transition-colors text-base">
-                            <?php esc_html_e('Search', 'csie'); ?>
+                            <?php echo esc_html($csie_search_text['button']); ?>
                         </button>
                     </form>
                 </div>

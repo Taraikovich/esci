@@ -222,7 +222,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Vacancy accordion
   initVacancyAccordion();
+
+  // Vacancy apply modal
+  initVacancyModal();
 });
+
+function initVacancyModal() {
+  const modal = document.getElementById('csie-vacancy-modal');
+  if (!modal) return;
+
+  const titleEl = modal.querySelector('.csie-vacancy-modal__title');
+  const hiddenInput = modal.querySelector('input[name="vacancy-name"]');
+
+  const open = (name) => {
+    if (titleEl) titleEl.textContent = name || '';
+    if (hiddenInput) hiddenInput.value = name || '';
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const close = () => {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  document.querySelectorAll('.csie-vacancy-apply').forEach((btn) => {
+    btn.addEventListener('click', () => open(btn.dataset.vacancyName));
+  });
+
+  modal.querySelectorAll('[data-vacancy-modal-close]').forEach((el) => {
+    el.addEventListener('click', close);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
+  });
+}
 
 function initVacancyAccordion() {
   document.querySelectorAll('.csie-vacancy-toggle').forEach((btn) => {

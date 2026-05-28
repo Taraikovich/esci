@@ -15,10 +15,10 @@ if (!$csie_sections) {
 
 <section class="relative pt-[20px] pb-[50px] overflow-hidden">
 	<!-- Pattern -->
-	<img
-		src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/pattern-research.png'); ?>"
-		alt="" aria-hidden="true"
-		class="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-60">
+	<div
+		aria-hidden="true"
+		class="absolute inset-0 pointer-events-none opacity-60 bg-repeat"
+		style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/img/pattern-research.png'); ?>'); background-size: 1000px auto;"></div>
 
 	<div class="relative max-w-[1200px] mx-auto px-[15px] xl:px-0 flex flex-col gap-10">
 		<?php foreach ($csie_sections as $csie_section) : ?>
@@ -34,15 +34,15 @@ if (!$csie_sections) {
 						<?php endif; ?>
 
 						<div class="relative w-[30px] h-[25px] lg:w-[50px] lg:h-[42px] shrink-0">
-								<div class="absolute left-0 top-0 size-[12px] lg:size-[20px] bg-[#00b1ff] transition-colors duration-500 group-hover:bg-[#004f86]"></div>
-								<div class="absolute right-0 bottom-0 size-[12px] lg:size-[20px] bg-[#004f86] transition-colors duration-500 group-hover:bg-[#00b1ff]"></div>
-								<?php if ($csie_section['section_icon']) : ?>
-									<img
-										src="<?php echo esc_url($csie_section['section_icon']['url']); ?>"
-										alt="<?php echo esc_attr($csie_section['section_icon']['alt']); ?>"
-										class="absolute inset-0 m-auto w-[20px] h-[20px] lg:w-[34px] lg:h-[34px] object-contain transition-transform duration-500 group-hover:scale-120">
-								<?php endif; ?>
-							</div>
+							<div class="absolute left-0 top-0 size-[12px] lg:size-[20px] bg-[#00b1ff] transition-colors duration-500 group-hover:bg-[#004f86]"></div>
+							<div class="absolute right-0 bottom-0 size-[12px] lg:size-[20px] bg-[#004f86] transition-colors duration-500 group-hover:bg-[#00b1ff]"></div>
+							<?php if ($csie_section['section_icon']) : ?>
+								<img
+									src="<?php echo esc_url($csie_section['section_icon']['url']); ?>"
+									alt="<?php echo esc_attr($csie_section['section_icon']['alt']); ?>"
+									class="absolute inset-0 m-auto w-[20px] h-[20px] lg:w-[34px] lg:h-[34px] object-contain transition-transform duration-500 group-hover:scale-120">
+							<?php endif; ?>
+						</div>
 					</div>
 				<?php endif; ?>
 

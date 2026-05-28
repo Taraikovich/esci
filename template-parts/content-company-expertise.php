@@ -34,7 +34,7 @@ if (! $csie_expertise_cards) {
             <div class="swiper-wrapper">
                 <?php foreach ($csie_expertise_cards as $csie_card) : ?>
                     <div class="swiper-slide">
-                        <div class="group bg-[#f8f8f8] flex flex-col gap-[20px] p-[25px] h-full lg:h-[258px]">
+                        <div class="group bg-[#f8f8f8] flex flex-col gap-[20px] p-[25px] h-full lg:h-[300px]">
                             <!-- Card header -->
                             <div class="flex items-center justify-between">
                                 <h3 class="text-[19px] font-bold uppercase leading-[1.2] text-[#353535]">

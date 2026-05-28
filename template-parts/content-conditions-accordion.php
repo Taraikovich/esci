@@ -10,8 +10,14 @@ $csie_conditions_items = get_field('conditions_items');
 ?>
 
 <?php if ($csie_conditions_items) : ?>
-	<section class="max-w-[1200px] mx-auto px-[15px] xl:px-0 py-[25px] lg:py-[50px]">
-		<div class="csie-conditions-accordion flex flex-col gap-[30px] lg:gap-[50px]">
+	<section class="relative overflow-hidden py-[25px] lg:py-[50px]">
+		<!-- Decorative pattern -->
+		<div
+			class="absolute inset-0 size-full -z-10 pointer-events-none bg-repeat opacity-60"
+			style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/img/pattern-research.png'); ?>'); background-size: 80%;"
+			aria-hidden="true"></div>
+
+		<div class="csie-conditions-accordion max-w-[1200px] mx-auto px-[15px] xl:px-0 flex flex-col gap-[30px] lg:gap-[50px]">
 			<?php foreach ($csie_conditions_items as $csie_condition) : ?>
 				<div class="csie-vacancy-item">
 					<!-- Header row -->

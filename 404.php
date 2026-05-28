@@ -7,7 +7,14 @@
 
 get_header(); ?>
 
-<main id="content" class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 lg:pt-16 lg:pb-28">
+<main id="content" class="relative overflow-hidden">
+    <!-- Decorative pattern -->
+    <div
+        class="absolute inset-0 size-full -z-10 pointer-events-none bg-repeat opacity-60"
+        style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/img/pattern-research.png'); ?>'); background-size: 80%;"
+        aria-hidden="true"></div>
+
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 lg:pt-16 lg:pb-28">
     <!-- Gradient Title -->
     <h1 class="text-[28px] lg:text-[55px] font-bold uppercase leading-[1.2] text-center lg:text-left mb-8 lg:mb-12 bg-gradient-to-r from-[#df4253] to-[#004f86] to-[65%] bg-clip-text text-transparent">
         <?php esc_html_e('Oops... it seems we got lost in the data!', 'csie'); ?>
@@ -43,6 +50,7 @@ get_header(); ?>
                 </svg>
             </a>
         </div>
+    </div>
     </div>
 </main>
 

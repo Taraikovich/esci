@@ -6,10 +6,13 @@
  * @package csie
  */
 
+
 $csie_vacancy_title       = get_field('vacancy_title');
 $csie_vacancy_description = get_field('vacancy_description');
 $csie_vacancy_button_text = get_field('vacancy_button_text');
 $csie_vacancy_items       = get_field('vacancy_items');
+$csie_lang                = function_exists('pll_current_language') ? pll_current_language() : '';
+$csie_vacancy_form_id     = $csie_lang === 'de' ? '04c36d5' : '91f6840';
 ?>
 
 <section class="max-w-[1200px] mx-auto px-[15px] xl:px-0 py-[25px] lg:py-[50px]">
@@ -40,11 +43,11 @@ $csie_vacancy_items       = get_field('vacancy_items');
 						</span>
 						<span class="csie-vacancy-icon shrink-0 w-[18px] h-[18px] lg:w-[22px] lg:h-[22px] ml-[15px]">
 							<svg class="csie-icon-plus w-full h-full" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<line x1="11" y1="0" x2="11" y2="22" stroke="#004f86" stroke-width="2"/>
-								<line x1="0" y1="11" x2="22" y2="11" stroke="#004f86" stroke-width="2"/>
+								<line x1="11" y1="0" x2="11" y2="22" stroke="#004f86" stroke-width="2" />
+								<line x1="0" y1="11" x2="22" y2="11" stroke="#004f86" stroke-width="2" />
 							</svg>
 							<svg class="csie-icon-minus w-full h-full" viewBox="0 0 22 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<line x1="0" y1="1" x2="22" y2="1" stroke="#004f86" stroke-width="2"/>
+								<line x1="0" y1="1" x2="22" y2="1" stroke="#004f86" stroke-width="2" />
 							</svg>
 						</span>
 					</button>
@@ -90,14 +93,15 @@ $csie_vacancy_items       = get_field('vacancy_items');
 							<?php endif; ?>
 
 							<!-- Right: Button -->
-							<?php if ($csie_vacancy_button_text && $csie_vacancy['vacancy_link']) : ?>
-								<a href="<?php echo esc_url($csie_vacancy['vacancy_link']); ?>"
-								   class="flex items-center justify-between w-full lg:w-[220px] h-[50px] bg-[#004f86] hover:bg-[#00b1ff] transition-colors rounded-[500px] px-[32px] shrink-0 lg:self-end">
+							<?php if ($csie_vacancy_button_text && $csie_vacancy_form_id) : ?>
+								<button type="button"
+									class="csie-vacancy-apply flex items-center justify-between w-full lg:w-[220px] h-[50px] bg-[#004f86] hover:bg-[#00b1ff] transition-colors rounded-[500px] px-[32px] shrink-0 lg:self-end cursor-pointer"
+									data-vacancy-name="<?php echo esc_attr($csie_vacancy['vacancy_name']); ?>">
 									<span class="text-white text-[16px] font-medium leading-[1.2]">
 										<?php echo esc_html($csie_vacancy_button_text); ?>
 									</span>
 									<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/arrow-right-white.svg'); ?>" alt="" class="w-[16px] h-[10px]">
-								</a>
+								</button>
 							<?php endif; ?>
 						</div>
 					</div>
@@ -106,3 +110,22 @@ $csie_vacancy_items       = get_field('vacancy_items');
 		</div>
 	<?php endif; ?>
 </section>
+
+<?php if ($csie_vacancy_form_id) : ?>
+	<div class="csie-vacancy-modal" id="csie-vacancy-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="csie-vacancy-modal-title">
+		<div class="csie-vacancy-modal__backdrop" data-vacancy-modal-close></div>
+		<div class="csie-vacancy-modal__dialog">
+			<div class="csie-vacancy-modal__header">
+				<h3 class="csie-vacancy-modal__title" id="csie-vacancy-modal-title"></h3>
+				<button type="button" class="csie-vacancy-modal__close" aria-label="<?php echo esc_attr__('Close', 'csie'); ?>" data-vacancy-modal-close>
+					<svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+						<path d="M1 1L13 13M13 1L1 13" stroke="#606060" stroke-width="2" stroke-linecap="round" />
+					</svg>
+				</button>
+			</div>
+			<div class="csie-vacancy-modal__body csie-contact-form">
+				<?php echo do_shortcode('[contact-form-7 id="' . $csie_vacancy_form_id . '"]'); ?>
+			</div>
+		</div>
+	</div>
+<?php endif; ?>

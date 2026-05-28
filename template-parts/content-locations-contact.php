@@ -23,7 +23,7 @@ $csie_contact_image = get_field('contact_image');
 
 			<?php if ($csie_contact_form_id) : ?>
 				<div class="csie-contact-form">
-					<?php echo do_shortcode('[contact-form-7 id="' . intval($csie_contact_form_id) . '"]'); ?>
+					<?php echo do_shortcode('[contact-form-7 id="' . $csie_contact_form_id . '"]'); ?>
 				</div>
 			<?php endif; ?>
 		</div>

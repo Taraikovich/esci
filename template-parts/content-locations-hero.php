@@ -32,7 +32,13 @@ $csie_locations_offices = get_field('locations_offices');
 		<?php if ($csie_locations_offices) : ?>
 			<div class="flex flex-col gap-[10px] xl:flex-row lg:gap-[39px]">
 				<?php foreach ($csie_locations_offices as $csie_office) : ?>
-					<div class="bg-[#f8f8f8] flex flex-col w-full lg:w-[387px]">
+					<div class="relative flex flex-col w-full lg:w-[387px] overflow-hidden">
+						<!-- Background pattern -->
+						<div class="absolute inset-0 bg-[#f8f8f8] -z-10"></div>
+						<img
+							src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/team-card-pattern.png'); ?>"
+							alt="" class="absolute bottom-0 left-0 w-full opacity-100 -z-10 pointer-events-none">
+
 						<!-- Photo -->
 						<?php if ($csie_office['office_photo']) : ?>
 							<div class="w-full h-[200px] lg:h-[318px] overflow-hidden">

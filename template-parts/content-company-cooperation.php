@@ -12,7 +12,9 @@ $csie_coop_text_right = get_field('cooperation_text_right');
 $csie_coop_image_1    = get_field('cooperation_image_1');
 $csie_coop_image_2    = get_field('cooperation_image_2');
 $pattern_url          = esc_url(get_template_directory_uri() . '/assets/img/footer-pattern.png');
+if (empty($csie_coop_title)) return;
 ?>
+
 
 <section class="bg-[#004f86] relative overflow-hidden">
 	<!-- Pattern overlay -->

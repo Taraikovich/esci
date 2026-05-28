@@ -10,8 +10,14 @@ $csie_heads_title = get_field('team_heads_title');
 $csie_heads_members = get_field('team_heads_members');
 ?>
 
-<section class="max-w-[1200px] mx-auto px-[15px] xl:px-0 py-[25px] lg:py-[50px]">
-	<div class="flex flex-col gap-[30px] lg:flex-row lg:items-start">
+<section class="relative overflow-hidden py-[25px] lg:py-[50px]">
+	<!-- Decorative pattern -->
+	<div
+		class="absolute inset-0 size-full -z-10 pointer-events-none bg-repeat opacity-60"
+		style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/img/pattern-research.png'); ?>'); background-size: 80%;"
+		aria-hidden="true"></div>
+
+	<div class="max-w-[1200px] mx-auto px-[15px] xl:px-0 flex flex-col gap-[30px] lg:flex-row lg:items-start">
 		<!-- Title -->
 		<?php if ($csie_heads_title) : ?>
 			<h2 class="bg-gradient-to-r from-[#df4253] to-[#004f86] to-[65%] bg-clip-text text-transparent font-bold text-[25px] lg:text-[55px] leading-[1.2] uppercase lg:w-[373px] lg:shrink-0">

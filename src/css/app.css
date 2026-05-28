@@ -496,3 +496,160 @@ nav li {
 .csie-conditions-text ol li b {
   flex-shrink: 0;
 }
+
+/* ===== Vacancy apply modal ===== */
+
+.csie-vacancy-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+.csie-vacancy-modal.is-open {
+  display: flex;
+}
+.csie-vacancy-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.csie-vacancy-modal__dialog {
+  position: relative;
+  background: #fff;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 560px;
+  max-height: calc(100vh - 30px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+.csie-vacancy-modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px 25px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.csie-vacancy-modal__title {
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #353535;
+  margin: 0;
+}
+.csie-vacancy-modal__close {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.csie-vacancy-modal__close svg {
+  width: 14px;
+  height: 14px;
+}
+.csie-vacancy-modal__body {
+  padding: 25px;
+  overflow-y: auto;
+}
+
+/* Vacancy modal — CF7 field layout */
+.csie-vacancy-modal__body .wpcf7-form p {
+  margin: 0;
+}
+.csie-vacancy-modal__body .csie-cf7-fields {
+  gap: 18px;
+}
+.csie-vacancy-modal__body .csie-cf7-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.csie-vacancy-modal__body .csie-cf7-field br,
+.csie-vacancy-modal__body .csie-cf7-fields > br,
+.csie-vacancy-modal__body .csie-cf7-bottom-row > br {
+  display: none;
+}
+.csie-vacancy-modal__body .wpcf7-form-control-wrap {
+  display: block;
+  line-height: 0;
+}
+.csie-vacancy-modal__body .csie-cf7-label {
+  font-size: 14px;
+  color: #353535;
+}
+.csie-vacancy-modal__body input[type="text"],
+.csie-vacancy-modal__body input[type="email"],
+.csie-vacancy-modal__body textarea {
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  background: #fff;
+}
+.csie-vacancy-modal__body textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+.csie-vacancy-modal__body .csie-cf7-file {
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 10px 12px;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  cursor: pointer;
+}
+.csie-vacancy-modal__body .csie-cf7-file input[type="file"] {
+  flex: 1;
+  font-size: 13px;
+  color: #606060;
+}
+.csie-vacancy-modal__body .csie-cf7-file-label {
+  color: #353535;
+  font-size: 14px;
+}
+.csie-vacancy-modal__body .csie-cf7-hidden {
+  display: none;
+}
+.csie-vacancy-modal__body .csie-cf7-bottom-row {
+  margin-top: 20px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
+}
+@media (min-width: 640px) {
+  .csie-vacancy-modal__body .csie-cf7-bottom-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.csie-vacancy-modal__body .csie-cf7-bottom-row p {
+  flex: none;
+}
+.csie-vacancy-modal__body input[type="submit"] {
+  width: auto;
+  min-width: 120px;
+  height: 42px;
+  background: #00b1ff;
+  padding: 0 24px;
+  text-align: center;
+  background-image: none;
+}
+.csie-vacancy-modal__body input[type="submit"]:hover {
+  background-color: #004f86;
+}
