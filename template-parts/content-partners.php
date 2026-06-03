@@ -95,7 +95,7 @@ $csie_mobile_wide = [];
 $csie_partners_title = get_field('partners_title');
 ?>
 
-<section class="py-[60px] lg:py-[100px] bg-white">
+<section class="py-[30px] lg:py-[50px] bg-white">
 	<div class="max-w-[1200px] mx-auto px-[15px] xl:px-0">
 		<?php if ($csie_partners_title) : ?>
 			<h2 class="text-[25px] lg:text-[40px] font-bold uppercase leading-[1.2] text-[#353535] text-center mb-[30px] lg:mb-[40px]">

@@ -14,7 +14,7 @@ if (! $csie_expertise_cards) {
 }
 ?>
 
-<section class="py-[50px] lg:py-[100px]">
+<section class="py-[30px] lg:py-[50px]">
     <div class="max-w-[1200px] mx-auto px-[15px] xl:px-0">
         <!-- Header -->
         <?php if ($csie_expertise_title) : ?>

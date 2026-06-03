@@ -15,7 +15,7 @@ if (! $cards) {
 }
 ?>
 
-<section class="bg-white pt-[30px] pb-0 lg:py-[50px]">
+<section class="bg-white py-[30px] lg:py-[50px]">
     <div class="max-w-[1200px] mx-auto px-[15px] xl:px-0">
         <!-- Title -->
         <?php if ($dynamics_title || $dynamics_title_suffix) : ?>

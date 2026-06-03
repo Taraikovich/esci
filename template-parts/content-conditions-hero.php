@@ -19,7 +19,7 @@ $csie_conditions_hero_image = get_field('conditions_hero_image');
 </section>
 
 <?php if ($csie_conditions_hero_image) : ?>
-	<div class="w-full h-[350px] lg:h-[400px] overflow-hidden">
+	<div class="w-full h-[150px] lg:h-[200px] overflow-hidden">
 		<img
 			src="<?php echo esc_url($csie_conditions_hero_image['url']); ?>"
 			alt="<?php echo esc_attr($csie_conditions_hero_image['alt']); ?>"

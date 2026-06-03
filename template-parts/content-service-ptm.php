@@ -14,7 +14,7 @@ if (!$csie_ptm_title) {
 }
 ?>
 
-<section class="relative bg-[#f8f8f8] py-[50px] lg:py-[100px] overflow-hidden">
+<section class="relative bg-[#f8f8f8] py-[30px] lg:py-[50px] overflow-hidden">
 	<!-- Pattern -->
 	<img
 		src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/pattern-research.png'); ?>"

@@ -17,7 +17,7 @@ if (! $automation_cards) {
 }
 ?>
 
-<section class="relative bg-white py-[60px] lg:py-[100px] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[290px] after:bg-[#004f86]">
+<section class="relative bg-white py-[30px] lg:py-[50px] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[290px] after:bg-[#004f86]">
     <div class="max-w-[1200px] mx-auto px-[15px] xl:px-0 overflow-hidden lg:overflow-visible">
         <!-- Header -->
         <div class="flex flex-col gap-[15px] lg:flex-row lg:items-center lg:justify-between mb-[30px] lg:mb-[49px]">

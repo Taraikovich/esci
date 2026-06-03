@@ -15,7 +15,7 @@ $csie_lang                = function_exists('pll_current_language') ? pll_curren
 $csie_vacancy_form_id     = $csie_lang === 'de' ? '04c36d5' : '91f6840';
 ?>
 
-<section class="max-w-[1200px] mx-auto px-[15px] xl:px-0 py-[25px] lg:py-[50px]">
+<section class="max-w-[1200px] mx-auto px-3.75 xl:px-0 py-6.25 lg:py-12.5">
 	<!-- Header: title + description -->
 	<div class="flex flex-col gap-[25px] lg:flex-row lg:gap-[50px] lg:items-start">
 		<?php if ($csie_vacancy_title) : ?>

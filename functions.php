@@ -164,7 +164,11 @@ class Csie_Footer_Walker extends Walker_Nav_Menu
             } elseif ($this->col_index === 2) {
                 $output .= '<div class="flex flex-col gap-[15px] lg:gap-5 lg:max-w-52 items-center lg:items-start">';
             }
-            $output .= '<h3 class="text-[20px] font-bold uppercase text-center lg:text-left">' . esc_html($item->title) . '</h3>';
+            $title = esc_html($item->title);
+            if (! empty($item->url) && $item->url !== '#') {
+                $title = '<a href="' . esc_url($item->url) . '" class="hover:underline">' . $title . '</a>';
+            }
+            $output .= '<h3 class="text-[20px] font-bold uppercase text-center lg:text-left">' . $title . '</h3>';
             $this->col_index++;
         } else {
             $atts = [];

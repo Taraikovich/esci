@@ -18,7 +18,7 @@ if (! $services) {
 $pattern_url = esc_url(get_template_directory_uri() . '/assets/img/services-pattern.png');
 ?>
 
-<section class="bg-white py-[60px] lg:py-[100px]">
+<section class="bg-white py-[30px] lg:py-[50px]">
     <div class="max-w-[1200px] mx-auto px-[15px] xl:px-0 overflow-hidden">
         <!-- Header -->
         <div class="flex items-center justify-between mb-[30px] lg:mb-[49px]">

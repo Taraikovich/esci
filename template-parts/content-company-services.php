@@ -13,7 +13,7 @@ $csie_os_image       = get_field('our_services_image');
 $csie_os_cards       = get_field('our_services_cards');
 ?>
 
-<section class="bg-white py-[60px] lg:py-[100px]">
+<section class="bg-white py-[30px] lg:py-[50px]">
 	<div class="max-w-[1200px] mx-auto px-[15px] xl:px-0 overflow-hidden">
 		<!-- Title -->
 		<?php if ($csie_os_title) : ?>

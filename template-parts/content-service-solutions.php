@@ -16,7 +16,7 @@ if (!$csie_sol_title) {
 }
 ?>
 
-<section class="relative bg-white py-[50px] lg:py-[100px] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[306px] after:bg-[#004f86]">
+<section class="relative bg-white py-[30px] lg:py-[50px] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[306px] after:bg-[#004f86]">
 	<div class="max-w-[1200px] mx-auto px-[15px] xl:px-0 overflow-hidden lg:overflow-visible">
 		<!-- Header -->
 		<div class="flex flex-col gap-[15px] lg:gap-[20px] mb-[30px] lg:mb-[50px]">

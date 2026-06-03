@@ -16,7 +16,7 @@ if (! $csie_profile_cards) {
 $pattern_url = esc_url(get_template_directory_uri() . '/assets/img/services-pattern.png');
 ?>
 
-<section class="bg-[#f8f8f8] py-[60px] lg:py-[100px]">
+<section class="bg-[#f8f8f8] py-[30px] lg:py-[50px]">
     <div class="max-w-[1200px] mx-auto px-[15px] xl:px-0 overflow-hidden">
         <!-- Title -->
         <?php if ($csie_profile_title) : ?>

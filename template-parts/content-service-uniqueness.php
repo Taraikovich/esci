@@ -15,7 +15,7 @@ if (!$csie_uniq_title) {
 }
 ?>
 
-<section class="py-[50px] lg:py-[100px]">
+<section class="py-[30px] lg:py-[50px]">
 	<div class="max-w-[1200px] mx-auto px-[15px] xl:px-0">
 		<!-- Header -->
 		<div class="flex flex-col gap-[15px] lg:gap-[20px] mb-[30px] lg:mb-[50px]">

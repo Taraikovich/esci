@@ -479,7 +479,7 @@ nav li {
 }
 
 .csie-conditions-text ol {
-  list-style: none;
+  list-style: decimal outside;
   padding-left: 20px;
   margin: 0;
   display: flex;
@@ -488,8 +488,16 @@ nav li {
 }
 
 .csie-conditions-text ol li {
+  display: list-item;
+}
+
+.csie-conditions-text ul {
+  list-style: disc outside;
+  padding-left: 20px;
+  margin: 0;
   display: flex;
-  gap: 0;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .csie-conditions-text ol li strong,

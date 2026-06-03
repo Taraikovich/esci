@@ -17,7 +17,7 @@ $csie_wd_button_text = get_field('webdev_button_text');
 $csie_wd_button_link = get_field('webdev_button_link');
 ?>
 
-<section class="py-[50px] lg:py-[100px]">
+<section class="py-[30px] lg:py-[50px]">
 	<div class="max-w-[1200px] mx-auto px-[15px] xl:px-0">
 		<!-- Title -->
 		<?php if ($csie_wd_title) : ?>

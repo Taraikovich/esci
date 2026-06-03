@@ -14,7 +14,7 @@ if (! $research_cards) {
 }
 ?>
 
-<section class="py-[60px] lg:py-[100px] bg-white">
+<section class="py-[30px] lg:py-[50px] bg-white">
     <div class="max-w-[1200px] mx-auto px-[15px] xl:px-0 overflow-hidden lg:overflow-visible">
         <div class="flex items-center justify-between gap-[10px] mb-[30px] lg:mb-[50px] lg:justify-center">
             <?php if ($research_title) : ?>

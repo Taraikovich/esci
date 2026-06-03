@@ -16,7 +16,7 @@ $csie_cons_button_text = get_field('consulting_button_text');
 $csie_cons_button_link = get_field('consulting_button_link');
 ?>
 
-<section class="bg-[#f8f8f8] py-[50px] lg:py-[100px]">
+<section class="bg-[#f8f8f8] py-[30px] lg:py-[50px]">
 	<div class="max-w-[1200px] mx-auto px-[15px] xl:px-0">
 		<!-- Title -->
 		<?php if ($csie_cons_title) : ?>

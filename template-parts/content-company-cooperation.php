@@ -23,7 +23,7 @@ if (empty($csie_coop_title)) return;
 		alt="" aria-hidden="true"
 		class="absolute inset-0 w-full h-full object-cover pointer-events-none">
 
-	<div class="relative max-w-[1200px] mx-auto px-[15px] xl:px-0 py-[50px] lg:py-[100px]">
+	<div class="relative max-w-[1200px] mx-auto px-[15px] xl:px-0 py-[30px] lg:py-[50px]">
 		<!-- Mobile: single column -->
 		<div class="flex flex-col gap-[30px] lg:hidden">
 			<?php if ($csie_coop_title) : ?>
